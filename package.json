@@ -1,0 +1,42 @@
+{
+  "name": "gmpLibrary",
+  "version": "1.0.0",
+  "description": "A website that provides an accesible way to show all the upcoming events and courses that's going to happen in Gaza Library for the public as well as creating an online tool to book a room for special events. The website also provide a detailed introduction about the library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG4/gmpLibrary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG4/gmpLibrary/issues"
+  },
+  "homepage": "https://github.com/FACG4/gmpLibrary#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "nodemon": "^1.17.4",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  },
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "env2": "^2.2.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "favicon": "0.0.2",
+    "jsonwebtoken": "^8.2.1",
+    "pg": "^7.4.3",
+    "pg-escape": "^0.2.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
