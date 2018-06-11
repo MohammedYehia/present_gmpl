@@ -15,6 +15,11 @@
       {{>footer}}
     </footer>
 </body>
-<script type="text/javascript" src="/js/{{jsFile}}.js">
+{{#if jsFile}}
+{{#each jsFile}}
+<script type="text/javascript" src="/js/{{this}}.js">
+{{/each}}
+{{/if}}
+
 </script>
 </html>
