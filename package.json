@@ -1,5 +1,5 @@
 {
-  "name": "gmpLibrary",
+  "name": "gmplibrary",
   "version": "1.0.0",
   "description": "A website that provides an accesible way to show all the upcoming events and courses that's going to happen in Gaza Library for the public as well as creating an online tool to book a room for special events. The website also provide a detailed introduction about the library.",
   "main": "index.js",

@@ -3,11 +3,12 @@ const { Pool } = require('pg');
 const url = require('url');
 require('env2')('./config.env');
 
-let DB_URL = process.env.DB_URL;
-if (process.env.NODE_ENV === "test") {
+let { DB_URL } = process.env;
+console.log(process.env.DB_DEV_URL);
+
+if (process.env.NODE_ENV === 'test') {
   DB_URL = process.env.TEST_DB_URL;
 }
-
 
 const params = url.parse(DB_URL);
 const [username, password] = params.auth.split(':');
@@ -18,7 +19,7 @@ const options = {
   database: params.pathname.split('/')[1],
   max: process.env.DB_MAX_CONNECTIONS || 2,
   user: username,
-  password: password
+  password,
 };
 
 options.ssl = options.host !== 'localhost';
