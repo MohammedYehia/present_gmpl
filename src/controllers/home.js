@@ -1,3 +1,3 @@
-exports.get = (req, res) => {
+export default (req, res) => {
   res.render('home');
 };

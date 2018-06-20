@@ -1,10 +1,11 @@
-const express = require('express');
-const home = require('./home');
-const login = require('./login');
+import express from 'express';
+import home from './home';
+import login from './login';
 
 const router = express.Router();
 
-router.get('/', home.get);
-router.get('/admin/login', login.get);
+router
+  .get('/', home.get)
+  .get('/admin/login', login.get);
 
-module.exports = router;
+export default router;

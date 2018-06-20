@@ -1,6 +1,12 @@
-const app = require('./app');
+import models from './database/models/index';
+import app from './app';
 
 const port = app.get('port');
-app.listen(port, () => {
-  console.log(`see magic on port ${port}`);
+
+models.sequelize.sync().then(() => {
+  app.listen(port, () => {
+    console.log(`see magic on port ${port}`);
+  });
+}).catch((e) => {
+  console.warn('error', e);
 });

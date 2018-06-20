@@ -1,10 +1,10 @@
-const express = require('express');
-const controllers = require('./controllers');
-const bodyParser = require('body-parser');
-const exhbs = require('express-handlebars');
-const path = require('path');
-const favicon = require('serve-favicon');
-const helpers = require('./views/helpers/index');
+import express from 'express';
+import bodyParser from 'body-parser';
+import exhbs from 'express-handlebars';
+import path from 'path';
+import favicon from 'serve-favicon';
+import controllers from './controllers';
+import helpers from './views/helpers/index';
 
 const app = express();
 
@@ -29,4 +29,5 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(controllers);
-module.exports = app;
+
+export default app;
