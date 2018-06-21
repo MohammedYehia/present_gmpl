@@ -156,3 +156,72 @@ a{
   background-color: var(--lochmara);
   color: var(--alice-blue)
 }
+
+
+/* ************************************************ */
+/* *********************LOGIN START************** */
+/* ************************************************ */
+.cp-label {
+  margin-top: 1.7em;
+  text-align: center;
+  color: rgb(251, 252, 253);
+  font-size: 1.5em;
+  font-family: arial;
+}
+
+.cp-login-form {
+  position: absolute;
+  margin: 0px auto;
+  background: rgb(20, 128, 197);
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: rgb(0, 0, 0) 3px 3px 10px;
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.cp-login-form-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.3em;
+  margin: 2em auto 1.7em;
+  color: rgb(251, 252, 253);
+  font-family: arial;
+}
+
+.cp-input {
+  width: 100%;
+  margin-bottom: 25px;
+  height: 40px;
+  border-radius: 5px;
+  outline: 0px;
+  border: 1px solid rgb(215, 218, 218);
+  padding: 0px 0px 0px 10px;
+  font-size: 14px;
+  margin-top: 1em;
+}
+
+.cp-link {
+  display: block;
+  text-align: center;
+  font-size: 0.9em;
+  color: rgb(251, 252, 253);
+}
+
+.cp-button {
+  width: 50%;
+  height: 35px;
+  display: block;
+  background: rgb(247, 168, 38);
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  border-radius: 25px;
+  margin: 20px auto;
+}
+/* ************************************************ */
+/* *********************LOGIN END************** */
+/* ************************************************ */

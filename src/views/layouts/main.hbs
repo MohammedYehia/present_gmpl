@@ -4,17 +4,22 @@
 <head>
 {{>head}}
 </head>
-<body >
-    <header>
+<body dir="rtl">
+    <header class="header">
       {{>header}}
     </header>
     <section >
       {{{body}}}
     </section>
-    <footer>
+    <footer class="footer">
       {{>footer}}
     </footer>
 </body>
-<script type="text/javascript" src="/js/{{jsFile}}.js">
+{{#if jsFile}}
+{{#each jsFile}}
+<script type="text/javascript" src="/js/{{this}}.js">
+{{/each}}
+{{/if}}
+
 </script>
 </html>

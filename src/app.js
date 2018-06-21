@@ -1,33 +1,47 @@
-const express = require('express');
-const app =express()
-const controllers = require('./controllers');
-const bodyParser = require('body-parser');
-const exhbs = require('express-handlebars');
-const path = require('path');
-const favicon = require('serve-favicon');
+import express from 'express';
+import bodyParser from 'body-parser';
+import exhbs from 'express-handlebars';
+import path from 'path';
+import favicon from 'serve-favicon';
+import controllers from './controllers';
+import helpers from './views/helpers/index';
 
-const helpers = require("./views/helpers/index");
-app.use(bodyParser.urlencoded({extended: false}));
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.set('views', path.join(__dirname,'views'));
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine(
-	"hbs",
-	exhbs({
-		extname: "hbs",
-		layoutsDir: path.join(__dirname, "views", "layouts"),
-		partialsDir: path.join(__dirname, "views", "partials"),
-		defaultLayout: "main",
-		helpers
-	})
+  'hbs',
+  exhbs({
+    extname: 'hbs',
+    layoutsDir: path.join(__dirname, 'views', 'layouts'),
+    partialsDir: path.join(__dirname, 'views', 'partials'),
+    defaultLayout: 'main',
+    helpers,
+  }),
 );
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
+app.use(controllers);
 
+app.use((req, res) => {
+  res.status(404).render('error', {
+    statusCode: 404,
+    errorMessage: 'Page not found',
+  });
+});
 
+app.use((err, req, res, next) => {
+  res.status(500).render('error', {
+    statusCode: 500,
+    errorMessage: 'Internal server error',
+  });
+});
 
-app.use(controllers)
-module.exports=app
+export default app;
