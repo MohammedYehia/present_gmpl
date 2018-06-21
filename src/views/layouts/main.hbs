@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>head}}
+</head>
+<body >
+    <header>
+      {{>header}}
+    </header>
+    <section >
+      {{{body}}}
+    </section>
+    <footer>
+      {{>footer}}
+    </footer>
+</body>
+{{#if jsFile}}
+{{#each jsFile}}
+<script type="text/javascript" src="/js/{{this}}.js">
+{{/each}}
+{{/if}}
+
+</script>
+</html>

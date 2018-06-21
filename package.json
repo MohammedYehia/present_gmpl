@@ -1,0 +1,45 @@
+{
+  "name": "gmplibrary",
+  "version": "1.0.0",
+  "description": "A website that provides an accesible way to show all the upcoming events and courses that's going to happen in Gaza Library for the public as well as creating an online tool to book a room for special events. The website also provide a detailed introduction about the library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/index.js",
+    "data": "nodemon --exec babel-node src/database/test_data/test_data1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG4/gmpLibrary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG4/gmpLibrary/issues"
+  },
+  "homepage": "https://github.com/FACG4/gmpLibrary#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "nodemon": "^1.17.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "env2": "^2.2.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.10",
+    "sequelize-cli": "^4.0.0",
+    "serve-favicon": "^2.5.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

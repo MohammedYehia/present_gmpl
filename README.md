@@ -9,14 +9,14 @@ The limited number of daily vistors to the library and unawareness of the librar
 
 ## User Stories:
 * Users are able to know about upcoming events with all necessary details.
-* Users are able to know about all the planned courese in the library and register online in any course. 
+* Users are able to know about all the planned courese in the library and register online in any course.
 * Users can get a detailed overview about the Library and it's history with all the related statistics and info.
 
 
 * Admin is able to see a list of all scheduled events and coureses.
 * Admin is able to add new events and coureses to the list, and edit/delete them in case of any changes.
 * Admin is able to view a list of all booked rooms and verify or delete the request.
-* Admin can see a list of all coureses and a list of all people who registered for each course. 
+* Admin can see a list of all coureses and a list of all people who registered for each course.
 
 ## Prototype link can be found here.
 * [GMPL](https://www.figma.com/proto/VdBme9Vndd2GEyh909P7vTJV/GMPL?node-id=64%3A0&scaling=contain)  
