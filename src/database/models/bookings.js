@@ -1,4 +1,4 @@
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Bookings = sequelize.define('bookings', {
     start: {
       type: DataTypes.DATE,

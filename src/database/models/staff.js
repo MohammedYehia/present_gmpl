@@ -2,8 +2,9 @@ import bcrypt from 'bcryptjs';
 
 export default (sequelize, DataTypes) => {
   const Staff = sequelize.define('staff', {
-    name: {
+    username: {
       type: DataTypes.STRING,
+      unique: true,
     },
     role: {
       type: DataTypes.STRING,

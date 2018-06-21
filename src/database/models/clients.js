@@ -5,9 +5,11 @@ export default (sequelize, DataTypes) => {
     },
     phone: {
       type: DataTypes.STRING,
+      unique: true,
     },
     email: {
       type: DataTypes.STRING,
+      unique: true,
     },
   });
   return Clients;

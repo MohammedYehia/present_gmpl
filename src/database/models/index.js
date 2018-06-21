@@ -1,43 +1,15 @@
-import Sequelize from 'sequelize';
-import env2 from 'env2';
+import models from '../config/db';
 
-env2('./config.env');
+const { sequelize } = models;
 
-const {
-  DB_NAME,
-  DB_USER,
-  DB_PASS,
-  DB_DIALECT,
-} = process.env;
-
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
-  dialect: DB_DIALECT,
-  operatorsAliases: false,
-  host: process.env.HOSTNAME || 'localhost',
-  define: {
-    underscored: true,
-    freezeTableName: true,
-  },
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000,
-  },
-});
-
-const models = {
-  Bookings: sequelize.import('./bookings'),
-  Clients: sequelize.import('./clients'),
-  Rooms: sequelize.import('./rooms'),
-  RoomImgs: sequelize.import('./rooms_imgs'),
-  EventCourses: sequelize.import('./event_courses'),
-  Staff: sequelize.import('./staff'),
-  ClientCourses: sequelize.import('./user_courses'),
-  ExtBookings: sequelize.import('./ext_bookings'),
-};
-
-models.sequelize = sequelize;
-models.Sequelize = Sequelize;
+models.Bookings = sequelize.import('./bookings');
+models.Clients = sequelize.import('./clients');
+models.Rooms = sequelize.import('./rooms');
+models.RoomImgs = sequelize.import('./rooms_imgs');
+models.EventCourses = sequelize.import('./event_courses');
+models.Staff = sequelize.import('./staff');
+models.ClientCourses = sequelize.import('./user_courses');
+models.ExtBookings = sequelize.import('./ext_bookings');
 
 // Relations;
 models.Bookings.belongsTo(models.Rooms, {

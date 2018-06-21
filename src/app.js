@@ -30,4 +30,18 @@ app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(controllers);
 
+app.use((req, res) => {
+  res.status(404).render('error', {
+    statusCode: 404,
+    errorMessage: 'Page not found',
+  });
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).render('error', {
+    statusCode: 500,
+    errorMessage: 'Internal server error',
+  });
+});
+
 export default app;
