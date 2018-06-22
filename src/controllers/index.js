@@ -1,11 +1,12 @@
 import express from 'express';
 import home from './home';
-import login from './login';
+import { getLogin, postLogin } from './login';
 
 const router = express.Router();
 
 router
   .get('/', home)
-  .get('/admin/login', login);
+  .get('/admin/login', getLogin)
+  .post('/admin/login', postLogin);
 
 export default router;

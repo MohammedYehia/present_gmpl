@@ -11,7 +11,7 @@ models.sequelize
 
 models.sequelize.sync({ force: true }).then(() => {
   models.Staff.create({
-    name: 'Hassan',
+    username: 'hassan',
     role: 'admin',
     password: '123',
   });
