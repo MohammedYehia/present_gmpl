@@ -1,1 +1,47 @@
-home
+  <main class="main container">
+    {{> bookingBanner}}
+    <div class="events-courses ">
+    <section class="fieldset">
+      <h2>الفعاليات</h2>
+      <div class="events">
+        {{#each events}}
+      <div class="event">
+        <h2>{{this.title}}</h2>
+        <img class="eventimg" src="{{this.image}}" alt="">
+        <div class="details">{{this.description}}</div>
+        <div class="time">
+          <span>التاريخ:&nbsp;</span><span>{{getDate this.event_time}}</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>الساعة:&nbsp;</span><span>{{getTime this.event_time}}</span>
+        </div>
+      </div>
+
+      {{/each}}
+    </div>
+    <div class="more">
+      <a href="/events">المزيد</a>
+    </div>
+    </section>
+
+        <section class="fieldset">
+      <h2>الدورات التدريبية</h2>
+      <div class="events">
+      {{#each courses}}
+      <div class="event">
+        <h2>{{this.title}}</h2>
+        <img class="eventimg" src="{{this.image}}" alt="">
+        <div class="details">{{this.description}}</div>
+        <div class="time">
+          <span>السعر: &nbsp; </span><span>{{this.fees}}$</span>
+        </div>
+      </div>
+      {{/each}}
+
+    </div>
+    <div class="more">
+      <a href="/courses">المزيد</a>
+    </div>
+    </section>
+
+  </div>
+  </main>

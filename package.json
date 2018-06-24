@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node src/index.js",
-    "data": "nodemon --exec babel-node src/database/test_data/test_data1.js"
+    "start": "babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "data1": "babel-node src/database/test_data/test_data1.js",
+    "data2": "babel-node src/database/test_data/test_data2.js",
+    "data3": "babel-node src/database/test_data/test_data3.js",
   },
   "repository": {
     "type": "git",
