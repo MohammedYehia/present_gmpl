@@ -4,10 +4,13 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     image: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
     },
     description: {
       type: DataTypes.TEXT,
+    },
+    event_time: {
+      type: DataTypes.DATE,
     },
     fees: {
       type: DataTypes.STRING,

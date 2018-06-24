@@ -142,11 +142,6 @@ a{
 /* events section end */
 
 
-.booking {
-  background-color: red;
-  height: 70px;
-}
-
 .footer {
   display: flex;
   justify-content: center;

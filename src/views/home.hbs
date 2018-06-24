@@ -1,9 +1,5 @@
-
-
   <main class="main container">
-    <div class="booking">
-      booking
-    </div>
+    {{> bookingBanner}}
     <div class="events-courses ">
     <section class="fieldset">
       <h2>الفعاليات</h2>
@@ -14,16 +10,16 @@
         <img class="eventimg" src="{{this.image}}" alt="">
         <div class="details">{{this.description}}</div>
         <div class="time">
-          <span>التاريخ:&nbsp;</span><span>{{this.created_at}}</span>
+          <span>التاريخ:&nbsp;</span><span>{{getDate this.event_time}}</span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span>الساعة:&nbsp;</span><span>25:70 ظ</span>
+          <span>الساعة:&nbsp;</span><span>{{getTime this.event_time}}</span>
         </div>
       </div>
 
       {{/each}}
     </div>
     <div class="more">
-      <a href="#">المزيد</a>
+      <a href="/events">المزيد</a>
     </div>
     </section>
 
@@ -43,7 +39,7 @@
 
     </div>
     <div class="more">
-      <a href="#">المزيد</a>
+      <a href="/courses">المزيد</a>
     </div>
     </section>
 
