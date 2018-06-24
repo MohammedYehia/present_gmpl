@@ -1,11 +1,13 @@
 Fixes
-fixes #<issue_number>
+fixes #12
 
 Related
-related to #<issue_number>
+related to #12
 
 Summary
-A couple of sentences explaining the contents of the PR
+add the main event page and the the specific detail page for each item
 
 Major Changes
-[OPTIONAL for small PRs] Detailed description of major changes in the PR, ideally with references to relevant commits, issues, line-numbers, etc.
+- [x] add some helpers to make the description shorter on the main page
+- [x] view all the details about an event or a course
+- [x] button to register for course
