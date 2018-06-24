@@ -30,12 +30,17 @@ app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(controllers);
 
-app.use((req, res) => {
-  res.status(404).render('error', {
-    statusCode: 404,
-    errorMessage: 'Page not found',
-  });
+app.use((err, req, res, next) => {
+  if (err.isJoi) {
+    res.status(404).render('error', {
+      statusCode: 404,
+      errorMessage: 'Page not found',
+    });
+  } else {
+    next(err);
+  }
 });
+
 
 app.use((err, req, res, next) => {
   res.status(500).render('error', {

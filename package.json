@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node src/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
-    "builddb": "babel-node src/database/test_data/queries.js"
+    "builddb": "babel-node src/database/test_data/queries.js",
+    "joi": "babel-node src/controllers/checkNumber.js"
   },
   "repository": {
     "type": "git",
@@ -29,18 +30,19 @@
     "tape": "^4.9.0"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "env2": "^2.2.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "joi": "^13.4.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.10",
     "sequelize-cli": "^4.0.0",
-    "serve-favicon": "^2.5.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "serve-favicon": "^2.5.0"
   }
 }
