@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node src/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
-    "builddb": "babel-node src/database/test_data/queries.js",
-    "joi": "babel-node src/controllers/checkNumber.js"
+    "builddb": "babel-node src/database/test_data/queries.js"
   },
   "repository": {
     "type": "git",
