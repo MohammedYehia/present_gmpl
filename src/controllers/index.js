@@ -3,7 +3,7 @@ import home from './home';
 import login from './login';
 import events from './events';
 import eventDetails from './eventDetails';
-import check from './checkNumber';
+import checkId from './checkNumber';
 
 const router = express.Router();
 
@@ -12,6 +12,6 @@ router
   .get('/admin/login', login)
   .get('/events', events)
   .get('/courses', events)
-  .get('/eventdetails/:id', check, eventDetails);
+  .get('/eventdetails/:id', checkId, eventDetails);
 
 export default router;
