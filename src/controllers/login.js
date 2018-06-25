@@ -3,7 +3,13 @@ import models from './../database/models/index';
 import createToken from './create_token';
 
 const getLogin = (req, res) => {
-  res.render('login', { pageTitle: 'Admin Login', jsFile: ['login'], swal: true });
+  res.render('login', {
+    layout: 'admin',
+    pageTitle: 'Admin Login',
+    jsFile: ['login'],
+    swal: true,
+    login: true,
+  });
 };
 const postLogin = (req, res, next) => {
   const { username, password } = req.body;

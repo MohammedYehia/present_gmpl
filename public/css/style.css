@@ -1,73 +1,153 @@
-* {
-  margin: 0;
+:root {
+    --alice-blue: #FBFCFD;
+    --prussian-blue: #0B4369;
+    --lochmara: #1667A1;
+    --navy-blue: #1480C5;
+    --athens-grey: #D7DADA;
+    --background: #f5f9fa;
+    --pelorous: #198FA4;
+    --orange: #f7a826;
+}
+
+*{
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+
 }
 
-/* ************************************************ */
-/* *********************LOGIN START************** */
-/* ************************************************ */
-.cp-label {
-  margin-top: 1.7em;
+body{
+  font-family: 'Amiri', serif;
+  background-color: var(--background)
+}
+
+a{
+  text-decoration: none;
+}
+
+.header{
+  background-color: var(--lochmara);
+}
+.container{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.navbar ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  list-style-type: none;
+}
+
+.navbar ul li a{
+  padding: 10px 20px;
+  color: var(--alice-blue)
+}
+/* navbar end */
+
+
+
+/* hero section start */
+.hero{
   text-align: center;
-  color: rgb(251, 252, 253);
-  font-size: 1.5em;
-  font-family: arial;
+  background-color: var(--navy-blue);
+  height: 80vh;
+  color: var(--alice-blue)
 }
 
-.cp-login-form {
-  position: absolute;
-  margin: 0px auto;
-  background: rgb(20, 128, 197);
-  width: 350px;
-  border-radius: 5px;
-  box-shadow: rgb(0, 0, 0) 3px 3px 10px;
-  padding: 15px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+.hero .logo{
+  padding: 30px 0;
+  width: 20%;
+  border-radius: 50%;
 }
 
-.cp-login-form-title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 2.3em;
-  margin: 2em auto 1.7em;
-  color: rgb(251, 252, 253);
-  font-family: arial;
+.hero h1{
+  padding-bottom: 20px;
 }
 
-.cp-input {
-  width: 100%;
-  margin-bottom: 25px;
-  height: 40px;
-  border-radius: 5px;
-  outline: 0px;
-  border: 1px solid rgb(215, 218, 218);
-  padding: 0px 0px 0px 10px;
-  font-size: 14px;
-  margin-top: 1em;
+.hero .search-form{
+  display: flex;
+  width: 40%;
+  height: 30px;
+  border-radius: 20px;
+  margin: 0 auto;
+  background: var(--alice-blue);
 }
 
-.cp-link {
-  display: block;
-  text-align: center;
-  font-size: 0.9em;
-  color: rgb(251, 252, 253);
-}
-
-.cp-button {
-  width: 50%;
-  height: 35px;
-  display: block;
-  background: rgb(247, 168, 38);
-  color: white;
-  font-size: 18px;
-  font-weight: 200;
-  cursor: pointer;
+.hero button{
+  margin: 2px;
+  background: var(--orange);
   border-radius: 25px;
-  margin: 20px auto;
+  padding: 0 20px;
+  border: none;
+
 }
-/* ************************************************ */
-/* *********************LOGIN END************** */
-/* ************************************************ */
+
+.hero input{
+  font-family: 'Amiri', serif ;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 100%;
+  outline: none;
+  border: none
+}
+/* hero section end */
+
+.main{
+  margin-top: 20px;
+
+}
+
+.more{
+  background-color: var(--orange);
+  width: 80px;
+  margin: 0 auto;
+}
+
+/* events section start */
+.events-courses {
+  /* width: 85%; */
+}
+
+ .fieldset {
+   text-align: center;
+   color: var(--prussian-blue);
+   padding: 20px 0;
+}
+
+.events{
+  display: flex;
+  flex-wrap: wrap;
+}
+.event {
+  width: calc((100% - 60px)/3);
+  min-width: 250px;
+  margin: 10px;
+  background-color: var(--alice-blue);
+  padding: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.event .eventimg {
+  display: block;
+  width: 100%;
+}
+
+.event .details{
+  border-top: 1px solid var(--athens-grey);
+  border-bottom: 1px solid var(--athens-grey);
+  margin-top: 10px;
+}
+/* events section end */
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-top: 20px;
+  background-color: var(--lochmara);
+  color: var(--alice-blue)
+}
