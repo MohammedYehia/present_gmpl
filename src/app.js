@@ -5,11 +5,13 @@ import path from 'path';
 import favicon from 'serve-favicon';
 import controllers from './controllers';
 import helpers from './views/helpers/index';
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -38,6 +40,7 @@ app.use((req, res) => {
 });
 
 app.use((err, req, res, next) => {
+  console.error(err);
   res.status(500).render('error', {
     statusCode: 500,
     errorMessage: 'Internal server error',

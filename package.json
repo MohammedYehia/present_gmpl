@@ -9,7 +9,7 @@
     "dev": "nodemon --exec babel-node src/index.js",
     "data1": "babel-node src/database/test_data/test_data1.js",
     "data2": "babel-node src/database/test_data/test_data2.js",
-    "data3": "babel-node src/database/test_data/test_data3.js",
+    "data3": "babel-node src/database/test_data/test_data3.js"
   },
   "repository": {
     "type": "git",
@@ -31,18 +31,20 @@
     "tape": "^4.9.0"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "env2": "^2.2.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.3.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
+    "request": "^2.87.0",
     "sequelize": "^4.37.10",
     "sequelize-cli": "^4.0.0",
-    "serve-favicon": "^2.5.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "serve-favicon": "^2.5.0"
   }
 }
