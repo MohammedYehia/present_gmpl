@@ -1,0 +1,39 @@
+<div class="eventsPageTitle">
+  <h1>الفعاليات</h1>
+</div>
+<div class="Container">
+  {{#each events}}
+
+  <div class="item">
+    <div class="itemHeader">
+
+      <div class="itemTitle">
+        <h4> {{addHash this.events_course.title}}</h4>
+
+      </div>
+      <div class="right">
+
+        <div class="buttons"><a class="editButton" href="/admin/event/edit/{{this.id}}">تعديل</a></div>
+        <div class="buttons"><a class="deleteButton" href="/admin/event/delete/{{this.id}}">حذف</a></div>
+      </div>
+    </div>
+    <div class="itemBody">
+
+      {{ descriptionTruncate this.events_course.description}}
+
+    </div>
+    <div class="itemFooter">
+      <div class="itemTime">
+        <h6><span>وقت الفعالية : </span>{{getDate this.events_course.event_time}} الساعة {{getTime this.events_course.event_time}}</h6>
+
+      </div>
+      <div class="itemPlace">
+        <h6><span>مكان الفعالية :</span>{{this.room.room_name}}</h6>
+
+      </div>
+
+    </div>
+
+  </div>
+  {{/each}}
+</div>

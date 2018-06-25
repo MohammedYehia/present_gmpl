@@ -19,7 +19,7 @@
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: 25%;
 
@@ -27,7 +27,7 @@
 
 .main {
   background-color: var(--alice-blue);
-  margin-left: 25%;
+  margin-right: 25%;
   width: 75%;
 }
 
@@ -67,6 +67,8 @@
   text-align: center;
   height: 35px;
   padding-top: 8px;
+  list-style-type: none;
+  cursor: pointer;
 }
 
 .subDropDown {
@@ -119,6 +121,10 @@
 
 .eventsPageTitle{
   margin: 50px;
+  text-align: right;
+}
+.Container{
+  direction: rtl;
 }
 .item{
   margin: 10px 80px;
