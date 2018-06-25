@@ -204,19 +204,19 @@ models.sequelize.sync({ force: true }).then(async () => {
   },
   ]);
   await models.ExtBookings.bulkCreate([{
-    eventTitle: 'امسية شعرية',
+    event_title: 'امسية شعرية',
     booking_id: 1,
     client_id: 1,
   },
   {
     client_id: 2,
     booking_id: 5,
-    eventTitle: 'لقاء ثقافي',
+    event_title: 'لقاء ثقافي',
   },
   {
     client_id: 3,
     booking_id: 6,
-    eventTitle: 'ندوة سياسية',
+    event_title: 'ندوة سياسية',
   },
   ]);
   await models.sequelize.close();
