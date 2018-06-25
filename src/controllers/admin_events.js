@@ -11,7 +11,7 @@ export default (req, res) => {
     }],
   })
     .then(result => res.render('admin_events', {
-      pageTitle: 'admin_events',
+      pageTitle: 'admin Events',
       layout: 'admin',
       events: result,
       jsFile: ['admin'],

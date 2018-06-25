@@ -40,7 +40,7 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
   res.status(500).render('error', {
     statusCode: 500,
-    errorMessage: 'Internal server error',
+    errorMessage: err,
   });
 });
 
