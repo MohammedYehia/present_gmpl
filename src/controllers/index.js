@@ -11,6 +11,7 @@ import validLogin from './valid_login';
 import adminEvents from './admin_events';
 import adminCourses from './admin_courses';
 import adminHome from './admin_home';
+import adminRoom from './admin_room';
 
 const controler = express.Router();
 
@@ -30,5 +31,6 @@ adminControler
   .get('/home', adminHome)
   .get('/events', adminEvents)
   .get('/courses', adminCourses)
+  .get('/room/:id', adminRoom);
 
 export { controler, adminControler };
