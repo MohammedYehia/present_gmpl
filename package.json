@@ -7,9 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node src/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
-    "data1": "babel-node src/database/test_data/test_data1.js",
-    "data2": "babel-node src/database/test_data/test_data2.js",
-    "data3": "babel-node src/database/test_data/test_data3.js"
+    "buildDb": "babel-node src/database/data/queries.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +37,7 @@
     "env2": "^2.2.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "joi": "^13.4.0",
     "jsonwebtoken": "^8.3.0",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",

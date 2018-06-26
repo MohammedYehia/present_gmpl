@@ -1,9 +1,9 @@
 export default (sequelize, DataTypes) => {
   const Bookings = sequelize.define('bookings', {
-    start: {
+    start_at: {
       type: DataTypes.DATE,
     },
-    end: {
+    end_at: {
       type: DataTypes.DATE,
     },
   });
