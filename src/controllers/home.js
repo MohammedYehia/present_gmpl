@@ -13,6 +13,6 @@ export default (req, res) => {
       }
     }
 
-    res.render('home', { courses, events });
+    res.render('home', { courses, events, cssFile: 'style' });
   });
 };
