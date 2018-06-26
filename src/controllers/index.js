@@ -11,19 +11,23 @@ import validLogin from './valid_login';
 import adminEvents from './admin_events';
 import adminCourses from './admin_courses';
 
-const router = express.Router();
+const controler = express.Router();
 
-router
+controler
   .get('/', home)
-  .get('/admin/login', getLogin)
-  .post('/admin/login', validLogin, postLogin)
-  .get('/admin/logout', logout)
   .get('/events', events)
-  .get('/admin/events', adminEvents)
-  .get('/admin/courses', adminCourses)
+  .get('/admin/login', getLogin)
   .get('/courses', events)
   .get('/bookings', bookings)
   .post('/phone/verification/start', phoneVerifyStart)
-  .get('/eventdetails/:id', checkId, eventDetails);
+  .get('/eventdetails/:id', checkId, eventDetails)
+  
+const adminControler = new express.Router();
 
-export default router;
+adminControler
+  .post('/login', validLogin, postLogin)
+  .get('/logout', logout)
+  .get('/events', adminEvents)
+  .get('/courses', adminCourses)
+
+export { controler, adminControler };
