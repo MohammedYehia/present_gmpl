@@ -1,6 +1,6 @@
-const loginForm=document.getElementById('cp-login-form')
-const username=document.getElementById('username')
-const password=document.getElementById('password')
+var loginForm=document.getElementById('cp-login-form')
+var username=document.getElementById('username')
+var password=document.getElementById('password')
 loginForm.addEventListener('submit',function(e){
   e.preventDefault()
   fetch('/admin/login',{
@@ -9,7 +9,7 @@ loginForm.addEventListener('submit',function(e){
    credentials: 'include',
    body: JSON.stringify({
      username: username.value,
-     password:username.value
+     password:password.value
    })
  })
     .then(res=>res.json())

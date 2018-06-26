@@ -4,11 +4,13 @@
 {{>adminHead}}
 </head>
 <body class="grid-container">
+  {{#unless login}}
   <section class="left">
     <header class="sideBar">
     {{>adminControlPanel}}
     </header>
   </section>
+  {{/unless}}
   <section class="main">
     <div class="mainBody">
       {{{body}}}
