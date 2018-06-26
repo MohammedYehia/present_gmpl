@@ -8,17 +8,19 @@ import checkId from './checkNumber';
 import validLogin from './valid_login';
 import adminEvents from './admin_events';
 import adminCourses from './admin_courses';
+import authintication from './authintication';
 
 const router = express.Router();
 
 router
   .get('/', home)
-  .get('/admin/login', getLogin)
-  .post('/admin/login', validLogin, postLogin)
-  .get('/admin/logout', logout)
   .get('/events', events)
-  .get('/admin/events', adminEvents)
-  .get('/admin/courses', adminCourses)
   .get('/courses', events)
-  .get('/eventdetails/:id', checkId, eventDetails);
+  .get('/eventdetails/:id', checkId, eventDetails)
+  .use('/admin', authintication)
+  .get('/admin/login', getLogin)
+  .get('/admin/logout', logout)
+  .post('/admin/login', validLogin, postLogin)
+  .get('/admin/events', adminEvents)
+  .get('/admin/courses', adminCourses);
 export default router;
