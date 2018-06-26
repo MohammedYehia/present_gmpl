@@ -69,7 +69,7 @@
   padding-top: 8px;
   list-style-type: none;
   cursor: pointer;
-  
+
 }
 
 .subDropDown {
@@ -160,12 +160,10 @@
 }
 
 .itemTime,.itemPlace{
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: normal;
 }
-.itemTime span,.itemPlace span{
-font-size: 1.2rem
-}
+
 .right{
   text-align: center;
 }
