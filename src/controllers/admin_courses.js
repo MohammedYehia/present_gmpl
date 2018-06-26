@@ -11,13 +11,10 @@ export default (req, res) => {
       model: models.Rooms,
     }],
   })
-    .then((result) => {
-      res.json(result);
-    });
-  // .then(result => res.render('admin_courses', {
-  //   pageTitle: 'admin Courses',
-  //   layout: 'admin',
-  //   courses: result,
-  //   jsFile: ['admin'],
-  // }));
+    .then(result => res.render('admin_courses', {
+      pageTitle: 'admin Courses',
+      layout: 'admin',
+      courses: result,
+      jsFile: ['admin'],
+    }));
 };
