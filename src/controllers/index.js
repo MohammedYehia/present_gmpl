@@ -1,19 +1,21 @@
 import express from 'express';
 import home from './home';
-import login from './login';
+import { getLogin, postLogin } from './login';
+import logout from './logout';
 import events from './events';
 import eventDetails from './eventDetails';
 import checkId from './checkNumber';
-import courseRegisteration from './courseRegisteration';
+import validLogin from './valid_login';
 
 const router = express.Router();
 
 router
   .get('/', home)
-  .get('/admin/login', login)
+  .get('/admin/login', getLogin)
+  .post('/admin/login',validLogin, postLogin)
+  .get('/admin/logout', logout)
   .get('/events', events)
   .get('/courses', events)
-  .get('/eventdetails/:id', checkId, eventDetails)
-  .get('/register/:id', checkId, courseRegisteration);
+  .get('/eventdetails/:id', checkId, eventDetails);
 
 export default router;
