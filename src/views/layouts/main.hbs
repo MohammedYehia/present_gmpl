@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 {{>head}}
 </head>
 <body dir="rtl">
-    <header class="header">
-      {{>header}}
-    </header>
+    {{#unless normal}}
+      <header class="header">
+        {{>header}}
+      </header>
+    {{/unless}}
     <section >
       {{{body}}}
     </section>
-    <footer class="footer">
-      {{>footer}}
-    </footer>
+    {{#unless normal}}
+      <footer class="footer">
+        {{>footer}}
+      </footer>
+    {{/unless}}
 </body>
 
 {{#if swal}}
