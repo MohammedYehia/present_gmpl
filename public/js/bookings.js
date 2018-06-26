@@ -31,6 +31,7 @@ $('#calendar').fullCalendar({
   locale: "ar-kw",
   defaultView: 'month',
   header: { center: 'month,agendaWeek,agendaDay' },
+  timezone: 'local',
   views: {
     agendaDay: {
       selectHelper:true,
