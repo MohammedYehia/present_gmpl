@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>adminHead}}
+</head>
+<body class="grid-container">
+  {{#unless login}}
+  <section class="left">
+    <header class="sideBar">
+    {{>adminControlPanel}}
+    </header> 
+  </section>
+  {{/unless}}
+  <section class="main">
+    <div class="mainBody">
+      {{{body}}}
+    </div>
+  </section>
+  {{#if swal}}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  {{/if}}
+  {{#if jsFile}}
+  {{#each jsFile}}
+  <script type="text/javascript" src="/js/{{this}}.js"></script>
+  {{/each}}
+  {{/if}}
+
+</script>
+</body>
+</html>

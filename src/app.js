@@ -45,6 +45,7 @@ app.use((err, req, res, next) => {
   if (err.isJoi) {
     res.status(401).send('Unauthorized');
   } else {
+    console.log(err)
     res.status(500).render('error', {
       statusCode: 500,
       errorMessage: 'Internal server error',
