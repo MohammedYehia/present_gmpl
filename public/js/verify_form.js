@@ -1,11 +1,11 @@
-const createForm = (room_name, starts_at, ends_at, referrer) => {
+const createForm = (room_name, start_at, end_at, referrer) => {
   const formdata = JSON.parse(localStorage.getItem('form')) || '';
   if(referrer === 'bookings'){
       return `
       <h5> حجز ${formdata.room_name || room_name}</h5>
-      <p> يوم ${new Date(starts_at).toLocaleDateString()} </p>
-      <p> من ${trimTime(starts_at)} </p>
-      <p>حتى ${trimTime(ends_at)} </p>
+      <p> يوم ${new Date(start_at).toLocaleDateString()} </p>
+      <p> من ${trimTime(start_at)} </p>
+      <p>حتى ${trimTime(end_at)} </p>
       <input type="text" value='${formdata.event_title || ''}' 'name="event_title" placeholder="عنوان الحدث" id="eventTitle">
       <input type="text" value='${formdata.name || ''}'  name="name" placeholder="الاسم كاملاً" id="name">
       <input type="email" value='${formdata.email || ''}'  name="email" placeholder="البريد الالكتروني" id="email">
@@ -58,8 +58,8 @@ const verifyStart = (start, end, resource, referrer) => {
       }   
       if(referrer === 'bookings'){
         data.event_title =  document.querySelector('#eventTitle').value,
-        data.starts_at= start;
-        data.ends_at= end;
+        data.start_at= start;
+        data.end_at= end;
         data.room_id= resource.id;
         data.room_name= resource.title;
       }     
@@ -176,9 +176,9 @@ const verifyCode = (response, start, end, resource, referrer) => {
           swal('خطأ', 'الرجاء ادخال كود التفعيل', 'error')
           .then(res =>{
             if(resource){
-              verifyCode(res,start, end, resource, referrer);
+              verifyCode(response,start, end, resource, referrer);
             }else{
-              verifyCode(res,'', '', '', referrer);
+              verifyCode(response,'', '', '', referrer);
             }
           });
         } else if (value) {
@@ -212,9 +212,9 @@ const verifyCode = (response, start, end, resource, referrer) => {
                   }).then(result =>{
                     if(result){
                       if(resource){
-                        verifyCode(res,start, end, resource, referrer);
+                        verifyCode(response,start, end, resource, referrer);
                       }else{
-                        verifyCode(res,'', '', '', referrer);
+                        verifyCode(response,'', '', '', referrer);
                       }
                     }
                   })
@@ -227,8 +227,7 @@ const verifyCode = (response, start, end, resource, referrer) => {
                     button: 'حسناً'
                   })
                   .then(() => {
-                    console.log(document.referrer)
-                    window.location = document.referrer
+                    window.location.reload();
                   });
                 }
               });

@@ -6,14 +6,16 @@
       <div class="events">
         {{#each events}}
       <div class="event">
+        <a href="/eventdetails/{{this.id}}">
         <h2>{{this.title}}</h2>
         <img class="eventimg" src="{{this.image}}" alt="">
-        <div class="details">{{this.description}}</div>
+        <div class="details">{{shorten this.description}}</div>
         <div class="time">
           <span>التاريخ:&nbsp;</span><span>{{getDate this.event_time}}</span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <span>الساعة:&nbsp;</span><span>{{getTime this.event_time}}</span>
         </div>
+        </a>
       </div>
 
       {{/each}}
@@ -28,12 +30,14 @@
       <div class="events">
       {{#each courses}}
       <div class="event">
+        <a href="/eventdetails/{{this.id}}">
         <h2>{{this.title}}</h2>
         <img class="eventimg" src="{{this.image}}" alt="">
-        <div class="details">{{this.description}}</div>
+        <div class="details">{{shorten this.description}}</div>
         <div class="time">
           <span>السعر: &nbsp; </span><span>{{this.fees}}$</span>
         </div>
+        </a>
       </div>
       {{/each}}
 

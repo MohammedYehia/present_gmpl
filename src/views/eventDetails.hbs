@@ -1,0 +1,28 @@
+<main class="main container">
+  {{> bookingBanner}}
+  <div class="events-courses ">
+  <section class="fieldset">
+    <div class="event single">
+      <img class="eventimg" src="{{detail.image}}" alt="">
+      <div class="details">
+        {{detail.description}}
+      </div>
+      <div class="time">
+        {{#if detail.fees}}
+        <span>السعر: &nbsp; </span><span>{{detail.fees}}$</span>
+        <a href="/register/{{detail.id}}">
+          <div class="more">
+            سجل الان
+          </div>
+        </a>
+        {{else}}
+        <span>التاريخ:&nbsp;</span><span>{{getDate detail.event_time}}</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>الساعة:&nbsp;</span><span>{{getTime detail.event_time}}</span>
+        {{/if}}
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>

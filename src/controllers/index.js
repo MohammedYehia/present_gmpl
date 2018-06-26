@@ -4,7 +4,8 @@ import login from './login';
 import events from './events';
 import bookings from './bookings';
 import { phoneVerifyStart } from './phone_verification';
-
+import eventDetails from './eventDetails';
+import checkId from './checkNumber';
 
 const router = express.Router();
 
@@ -15,5 +16,6 @@ router
   .get('/courses', events)
   .get('/bookings', bookings)
   .post('/phone/verification/start', phoneVerifyStart)
-  
+  .get('/eventdetails/:id', checkId, eventDetails);
+
 export default router;

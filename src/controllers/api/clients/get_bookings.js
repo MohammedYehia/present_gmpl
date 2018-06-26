@@ -2,15 +2,15 @@ import models from '../../../database/models';
 import { getToken } from '../../create_token'
 
 export const getBookings = (req, res) => {
-  models.sequelize.query("SELECT ext_bookings.event_title, bookings.starts_at, bookings.ends_at,bookings.room_id, events_courses.title FROM ext_bookings RIGHT OUTER JOIN bookings ON bookings.id = ext_bookings.booking_id LEFT OUTER JOIN events_courses ON events_courses.id = bookings.event_id").spread((results, metadata) => {
+  models.sequelize.query("SELECT ext_bookings.event_title, bookings.start_at, bookings.end_at,bookings.room_id, events_courses.title FROM ext_bookings RIGHT OUTER JOIN bookings ON bookings.id = ext_bookings.booking_id LEFT OUTER JOIN events_courses ON events_courses.id = bookings.event_id").spread((results, metadata) => {
     const resObj =  results.map((booking) => {
       console.log(booking);
       return Object.assign(
         {},
         {
           id: booking.id,
-          start: booking.starts_at,
-          end: booking.ends_at,
+          start: booking.start_at,
+          end: booking.end_at,
           resourceId: booking.room_id,
           title: booking.title || booking.event_title
         }
@@ -29,8 +29,8 @@ export const postBookings = (req, res) => {
       res.json({ err: 'Something went wrong try again' })
     } else {
       const {
-        starts_at,
-        ends_at,
+        start_at,
+        end_at,
         room_id,
         name,
         phone,
@@ -41,8 +41,8 @@ export const postBookings = (req, res) => {
       console.log(data);
     // insert into Bookings table
       models.Bookings.create({
-        starts_at,
-        ends_at,
+        start_at,
+        end_at,
         room_id
       })
       .then((bookingRes) =>{
