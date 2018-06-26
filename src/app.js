@@ -30,23 +30,25 @@ app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(controllers);
 
-app.use((err, req, res, next) => {
-  if (err.isJoi) {
-    res.status(404).render('error', {
-      statusCode: 404,
-      errorMessage: 'Page not found',
-    });
-  } else {
-    next(err);
-  }
+app.use((req, res) => {
+  res.status(404).render('error', {
+    cssFile: 'style',
+    statusCode: 404,
+    errorMessage: 'Page Not Found',
+  });
 });
 
 
 app.use((err, req, res, next) => {
-  res.status(500).render('error', {
-    statusCode: 500,
-    errorMessage: 'Internal server error',
-  });
+  if (err.isJoi) {
+    res.status(401).send('Unauthorized');
+  } else {
+    res.status(500).render('error', {
+      cssFile: 'style',
+      statusCode: 500,
+      errorMessage: 'Internal server error',
+    });
+  }
 });
 
 export default app;

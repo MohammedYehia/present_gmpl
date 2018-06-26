@@ -8,6 +8,6 @@ export default (req, res) => {
         errorMessage: 'Page not found',
       });
     }
-    res.render('eventDetails', { detail: detail.dataValues });
+    return res.render('eventDetails', { detail: detail.dataValues, cssFile: 'style' });
   });
 };
