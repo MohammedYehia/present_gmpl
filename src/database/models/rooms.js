@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-  const Rooms = sequelize.define('halls', {
+  const Rooms = sequelize.define('rooms', {
     room_name: {
       type: DataTypes.STRING,
     },

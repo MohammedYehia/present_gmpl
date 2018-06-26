@@ -7,6 +7,8 @@ import { getAdminPage, postEvent } from './adminAddEvent';
 import eventDetails from './eventDetails';
 import checkId from './checkNumber';
 import validLogin from './valid_login';
+import adminEvents from './admin_events';
+import adminCourses from './admin_courses';
 
 const router = express.Router();
 
@@ -16,9 +18,10 @@ router
   .post('/admin/login', validLogin, postLogin)
   .get('/admin/logout', logout)
   .get('/events', events)
+  .get('/admin/events', adminEvents)
+  .get('/admin/courses', adminCourses)
   .get('/courses', events)
   .get('/admin/addEventsPage', getAdminPage)
   .post('/admin/addevent', postEvent)
   .get('/eventdetails/:id', checkId, eventDetails);
-
 export default router;
