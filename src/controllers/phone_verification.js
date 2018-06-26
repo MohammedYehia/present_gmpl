@@ -1,5 +1,5 @@
 import request from 'request';
-import { createToken, getToken } from '../create_token';
+import { createToken, getToken } from './create_token';
 
 export const phoneVerifyStart = (req, res) => {
   const data = req.body;
@@ -24,20 +24,21 @@ export const phoneVerifyStart = (req, res) => {
             console.error('createToken error', tokenErr);
             res.json({ err: 'Something went wrong try again'})
           } else if (isToken) {
-            res.status(200).json({ err: null, secondsToExp: body.seconds_to_expire, msg: body.message });
+            const msg = body.message.split('+')[1]
+            res.json({ err: null, secondsToExp: body.seconds_to_expire, msg: `تم ارسال الرسالة بنجاح الى \n ${msg}` });
           }
         });
       }
   });
 };
 
-export const phoneVerifyCheck = (req, res) => {
+export const phoneVerifyCheck = (req, res, next) => {
   // verify phone twilio check code
   const { code } = req.body;
   const { token } = req.cookies;
   getToken(token,(getTokenErr, data) => {
     if (getTokenErr) {
-      console.error('createToken error', tokenErr);
+      console.error('createToken error', getTokenErr);
       res.json({ err: 'Something went wrong try again'})
     } else {
       const { phone } = data;
@@ -53,10 +54,13 @@ export const phoneVerifyCheck = (req, res) => {
         body = JSON.parse(body);
         console.log('body', body);
         if (error) {
-          console.error('createToken error', tokenErr);
+          console.error('createToken error', getTokenErr);
           res.json({ err: 'Something went wrong try again'})
-        } else {
+        } else if (body.success) {
           console.log('success', body.success);
+          next();
+        } else {
+          console.log('invalid code');
           res.json({ err: null, success: body.success });
         }
       });

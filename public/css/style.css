@@ -152,6 +152,23 @@ a{
   color: var(--alice-blue)
 }
 
+/* bookings section start */
+#calendar {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.swal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swal-form input {
+  width: 70%;
+  margin-top: 10px;
+}
+/* bookings section end */
 
 /* ************************************************ */
 /* *********************LOGIN START************** */

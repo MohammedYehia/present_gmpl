@@ -4,6 +4,7 @@ import exhbs from 'express-handlebars';
 import path from 'path';
 import favicon from 'serve-favicon';
 import controllers from './controllers';
+import clientsApi from './controllers/api/clients';
 import helpers from './views/helpers/index';
 import cookieParser from 'cookie-parser';
 
@@ -31,6 +32,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(controllers);
+app.use('/api/v1', clientsApi)
+// app.use('/api/v1/admin', middleware, routes)
 
 app.use((req, res) => {
   res.status(404).render('error', {
