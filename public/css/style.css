@@ -104,6 +104,15 @@ a{
   background-color: var(--orange);
   width: 80px;
   margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  font-family: 'Amiri', serif;
+}
+
+.hidden {
+  display: none;
 }
 
 /* events section start */

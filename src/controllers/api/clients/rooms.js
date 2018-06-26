@@ -19,13 +19,9 @@ export default (req, res) => {
 	}
       )
     });
-    console.log('rooms', resObj);
     res.json(resObj);
   })
    .catch((error) => {
-     console.error('get rooms api error', error);
-     res.json({
-       error: 'some error happens try again later'
-     });
+     res.json({ error: 'some error happens try again later' });
    });
 };

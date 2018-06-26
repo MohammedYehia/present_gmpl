@@ -10,11 +10,10 @@
       <div class="time">
         {{#if detail.fees}}
         <span>السعر: &nbsp; </span><span>{{detail.fees}}$</span>
-        <a href="/register/{{detail.id}}">
-          <div class="more">
+          <div class="more" id="register">
+            <div class="hidden" id="courseId">{{detail.id}}</div>
             سجل الان
           </div>
-        </a>
         {{else}}
         <span>التاريخ:&nbsp;</span><span>{{getDate detail.event_time}}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,3 +25,9 @@
 </div>
 
 </main>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{#if js}}
+{{#each js}}
+  <script type="text/javascript" src="/js/{{this}}.js"></script>
+{{/each}}
+{{/if}}    

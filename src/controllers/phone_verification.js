@@ -13,21 +13,18 @@ export const phoneVerifyStart = (req, res) => {
     },
     body: `via=sms&phone_number=${data.phone}&country_code=970&code_length=6&locale=en`
     }, (error, response, body) => {
-      if (error) {
-        console.error('twilio start error', error);
-        res.json({ err: 'Something went wrong try again'})
-      } else {
-        body = JSON.parse(body);
-        console.log('body', body.message);
+      if (error) 
+       return  res.json({ err: 'Something went wrong try again'});
+        const { success, message, seconds_to_expire } = JSON.parse(body);
+        if (success) {
         createToken(data, res, (tokenErr, isToken) => {
-          if (tokenErr) {
-            console.error('createToken error', tokenErr);
-            res.json({ err: 'Something went wrong try again'})
-          } else if (isToken) {
-            const msg = body.message.split('+')[1]
-            res.json({ err: null, secondsToExp: body.seconds_to_expire, msg: `تم ارسال الرسالة بنجاح الى \n ${msg}` });
-          }
+          if (tokenErr) 
+          return  res.json({ err: 'Something went wrong try again'})
+          const msg = message.split('+')[1]
+          return   res.json({ err: null, secondsToExp: seconds_to_expire, msg: `تم ارسال الرسالة بنجاح الى \n ${msg}` });
         });
+      } else {
+        res.json({ err: 'Something went wrong try again'})
       }
   });
 };
@@ -38,7 +35,6 @@ export const phoneVerifyCheck = (req, res, next) => {
   const { token } = req.cookies;
   getToken(token,(getTokenErr, data) => {
     if (getTokenErr) {
-      console.error('createToken error', getTokenErr);
       res.json({ err: 'Something went wrong try again'})
     } else {
       const { phone } = data;
@@ -52,15 +48,11 @@ export const phoneVerifyCheck = (req, res, next) => {
         body: `phone_number=${phone}&country_code=970&verification_code=${code}`
       }, (error, response, body) => {
         body = JSON.parse(body);
-        console.log('body', body);
         if (error) {
-          console.error('createToken error', getTokenErr);
           res.json({ err: 'Something went wrong try again'})
         } else if (body.success) {
-          console.log('success', body.success);
           next();
         } else {
-          console.log('invalid code');
           res.json({ err: null, success: body.success });
         }
       });

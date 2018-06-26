@@ -62,7 +62,7 @@ const verifyStart = (start, end, resource, referrer) => {
         data.end_at= end;
         data.room_id= resource.id;
         data.room_name= resource.title;
-      }     
+      }
       localStorage.setItem('form', JSON.stringify(data))
       fetch('/phone/verification/start', {
         credentials: 'same-origin',
@@ -182,7 +182,7 @@ const verifyCode = (response, start, end, resource, referrer) => {
             }
           });
         } else if (value) {
-          fetch('/api/v1/bookings', {
+          fetch(`/api/v1/${referrer}`, {
             credentials: 'same-origin',
             headers: {
                 'content-type': 'application/json',

@@ -8,6 +8,12 @@ export default (req, res) => {
         errorMessage: 'Page not found',
       });
     }
-    return res.render('eventDetails', { detail: detail.dataValues, cssFile: 'style' });
+    return res.render('eventDetails', { 
+      detail: detail.dataValues,
+      js: [
+        'verify_form',
+        'event_details'
+      ]
+    });
   });
 };
