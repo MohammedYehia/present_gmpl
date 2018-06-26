@@ -3,7 +3,7 @@ import uploadPhoto from './uploadPhotos';
 
 export const getAdminPage = (req, res) => {
   res.render('adminAddEvent', {
-    pageTitle: 'adminAddEvent', jsFile: ['addEvent'], swal: true, layout: 'admin',
+    pageTitle: 'adminAddEvent', swal: true, layout: 'admin',
   });
 };
 
@@ -39,7 +39,7 @@ export const postEvent = (req, res, next) => {
     });
   } else {
     res.render('adminAddEvent', {
-      pageTitle: 'adminAddEvent', jsFile: ['addEvent'], swal: true, layout: 'admin', errMsg: 'all fields are requierd ',
+      pageTitle: 'adminAddEvent', swal: true, layout: 'admin', errMsg: 'all fields are requierd ',
     });
   }
 };

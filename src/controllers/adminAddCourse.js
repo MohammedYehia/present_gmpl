@@ -3,7 +3,7 @@ import uploadPhoto from './uploadPhotos';
 
 export const getAddCoursePage = (req, res) => {
   res.render('adminAddCourse', {
-    pageTitle: 'adminAddCourse', jsFile: ['addEvent'], swal: true, layout: 'admin',
+    pageTitle: 'adminAddCourse', swal: true, layout: 'admin',
   });
 };
 
@@ -30,7 +30,7 @@ export const postCourse = (req, res, next) => {
     });
   } else {
     res.render('adminAddEvent', {
-      pageTitle: 'adminAddCourse', jsFile: ['addEvent'], swal: true, layout: 'admin', errMsg: 'all fields are requierd ',
+      pageTitle: 'adminAddCourse', swal: true, layout: 'admin', errMsg: 'all fields are requierd ',
     });
   }
 };

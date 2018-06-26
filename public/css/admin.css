@@ -125,8 +125,9 @@ Add Event
 */
 
 
-.cp-label {
+.cp-form .cp-label {
   font-size: 1.4em;
+  color: #000;
 }
 
 
@@ -135,6 +136,7 @@ Add Event
   /* margin: 0px auto; */
   width: 100%;
   padding: 15px;
+  text-align: right;
 }
 
 .cp-form-title {
@@ -144,7 +146,7 @@ Add Event
   margin: 20px auto 40px auto;
 }
 
-.cp-input {
+.cp-form .cp-input {
   width: 100%;
   margin-bottom: 25px;
   height: 40px;
@@ -158,7 +160,7 @@ Add Event
 }
 
 
-.cp-button {
+.cp-form .cp-button {
   display: inline-block;
   text-decoration: none;
   color: #fff;
@@ -170,13 +172,13 @@ Add Event
   overflow: hidden;
   background-color: red;
   height: 60px;
-  float:right;
+  float: right;
 
 }
-.cp-inputs-div{
+.cp-form .cp-inputs-div{
   margin:0 15%;
 }
-.cp-inputs-div div textarea{
+.cp-form .cp-inputs-div div textarea{
   height: 100px;
 }
 
@@ -324,10 +326,6 @@ background-color:#F4F4F4;
 .tableElements:nth-of-type(even) {
 background-color:#fff;
 }
-<<<<<<< HEAD
-=======
-
-
 
 .cp-label {
   margin-top: 1.7em;
@@ -390,4 +388,3 @@ background-color:#fff;
   border-radius: 25px;
   margin: 20px auto;
 }
->>>>>>> bdcdd313d033ac5ecf59da2f044365ac9d56ff48
