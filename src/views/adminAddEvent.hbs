@@ -1,0 +1,47 @@
+<form class="cp-form" id="addEvent" enctype="multipart/form-data" action="/admin/addevent" method="POST">
+  <h2 class="cp-form-title" id="cp-form-title">اضافة فعالية</h2>
+  {{#if errMsg}}
+    <h3 class="errMsg">{{errMsg}}</h3>
+  {{/if}}
+  <div class="cp-inputs-div" id="cp-inputs-div">
+    <div class="">
+      <label class="cp-label" for="eventTitle" id="cp-lable-0">عنوان الفعالية</label>
+      <input class="cp-input" type="Text" name="eventTitle" id="eventTitle">
+    </div>
+    <div class="">
+      <label class="cp-label" for="eventDate" id="cp-lable-1">تاريخ الفعالية</label>
+      <input class="cp-input" type="date" name="eventDate" id="eventDate">
+    </div>
+    <div class="">
+      <label class="cp-label" for="startTime" id="cp-lable-1">وقت بداية الفعالية</label>
+      <input class="cp-input" type="time" name="startTime" id="startTime">
+    </div>
+    <div class="">
+      <label class="cp-label" for="endTime" id="cp-lable-1">وقت نهاية الفعالية</label>
+      <input class="cp-input" type="time" name="endTime" id="endTime">
+    </div>
+    <div class="">
+      <label class="cp-label" for="eventRoom">مكان الفعالية</label>
+      <select class="cp-input" name="eventPlace" id="eventRoom">
+              <option value="1">قاعة تورينو</option>
+              <option value="2">قاعة المركز الثقافي التركي</option>
+              <option value="3">قاعة الانشطة</option>
+            </select>
+      <div class="">
+        <label class="cp-label" for="eventDiscription" id="cp-lable-3">تفاصيل الفعالية</label>
+        <textarea class="cp-input" name="eventDiscription" id="eventDiscription" rows="8" cols="40"></textarea>
+      </div>
+      <div id="eventImageDiv">
+        <!-- <label class="cp-label" for="eventImage" id="cp-lable-4">Choose Event image to upload</label> -->
+        <label for="eventImage"  id="cp-lable-4">
+          <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/upload-512.png" alt="">
+         <span>اضف صورة اعلانية للفعالية</span>
+      </label>
+        <input type="file" class="cp-input" name="eventImage" id="eventImage" multiple>
+      </div>
+
+
+    </div>
+  </div>
+  <button class="cp-button" type="submit" id="cp-submit">اضافة</button>
+</form>

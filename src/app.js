@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import exhbs from 'express-handlebars';
 import path from 'path';
 import favicon from 'serve-favicon';
+import fileUpload from 'express-fileupload';
 import controllers from './controllers';
 import helpers from './views/helpers/index';
 
@@ -23,6 +24,7 @@ app.engine(
     helpers,
   }),
 );
+app.use(fileUpload());
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
@@ -37,11 +39,11 @@ app.use((req, res) => {
   });
 });
 
-app.use((err, req, res, next) => {
-  res.status(500).render('error', {
-    statusCode: 500,
-    errorMessage: 'Internal server error',
-  });
-});
+// app.use((err, req, res, next) => {
+//   res.status(500).render('error', {
+//     statusCode: 500,
+//     errorMessage: 'Internal server error',
+//   });
+// });
 
 export default app;

@@ -9,14 +9,14 @@ models.sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-models.sequelize.sync({ force: true }).then(() => {
-  models.Staff.create({
+models.sequelize.sync({ force: true }).then(async () => {
+  await models.Staff.create({
     name: 'Hassan',
     role: 'admin',
     password: '123',
   });
 
-  models.Rooms.bulkCreate([{
+  await models.Rooms.bulkCreate([{
     room_name: 'قاعة تورينو',
     capacity: 20,
     lcd: true,
@@ -33,7 +33,7 @@ models.sequelize.sync({ force: true }).then(() => {
   },
   ]);
 
-  models.EventCourses.bulkCreate([{
+  await models.EventCourses.bulkCreate([{
     title: 'دورة اللغة التركية',
     image: 'https://bit.ly/2yBsMlk',
     description: 'تعلن مكتبة بلدية غزة العامة عن عقد دورة في اللغة التركية بالتعاون مع الحكومة التركية ومن خلال توفير مدرس تركي بالمكتبة واللتي ستتناول اساسيات اللغة التركية (كتابة، محادثة ،قراءة)',
@@ -62,7 +62,7 @@ models.sequelize.sync({ force: true }).then(() => {
   {
     title: 'لقاء ثقافي بعنوان القراءة والحاضر',
     image: 'https://bit.ly/2yBsMlk',
-    description: 'تعلن مكتبة بلدية غزة العامة عن عقد لقاء ثقافي  بعنوان القراءة والحاضر والتي ينظمها مركز هوليست الثقافي بالتعاون مع مكتبة بلدية غزة العامة حيث سيحضر اللقاء وزير الثقافة الاستاذ/محمد الحيلة',
+    description: 'تعلن مكتبة بلدية غزة العامة عن عقد لقاء ثقافي  بعنوان القراءة والحاضر والتي ينظمها مركز هوليست الثقافي بالتعاون مع مكتبة بلدية غزة العامة حيث سيحضر اللقاء وزير الثقافة الاستاذ/محمد حسن',
     fees: null,
     event_time: '2018-06-20T14:21:00',
   },
@@ -110,7 +110,7 @@ models.sequelize.sync({ force: true }).then(() => {
 
   ]);
 
-  models.Clients.bulkCreate([{
+  await models.Clients.bulkCreate([{
     name: 'ramy',
     phone: '0599447989',
     email: 'ramy@hotmail.com',
@@ -131,4 +131,94 @@ models.sequelize.sync({ force: true }).then(() => {
     email: 'abdalsamad.y.m@gmail.com',
   },
   ]);
+  await models.RoomImgs.bulkCreate([{
+    img_url: 'http:img.png',
+    room_id: 1,
+  }]);
+
+  await models.ClientCourses.bulkCreate([{
+    client_id: 1,
+    event_id: 1,
+  },
+  {
+    client_id: 2,
+    event_id: 1,
+  },
+  {
+    client_id: 3,
+    event_id: 1,
+  },
+  {
+    client_id: 1,
+    event_id: 2,
+  },
+  {
+    client_id: 2,
+    event_id: 2,
+  },
+  {
+    client_id: 3,
+    event_id: 2,
+  },
+  {
+    client_id: 4,
+    event_id: 2,
+  },
+  ]);
+
+  await models.Bookings.bulkCreate([{
+    event_id: 4,
+    start_at: '2018-06-25 12:30:00',
+    end_at: '2018-06-25 14:30:00',
+    room_id: 3,
+  },
+  {
+    event_id: 5,
+    start_at: '2018-06-28 16:00:00',
+    end_at: '2018-06-28 18:30:00',
+    room_id: 1,
+  },
+  {
+    eventCourse_id: 6,
+    start_at: '2018-07-15 12:00:00',
+    end_at: '2018-07-15 14:00:00',
+    room_id: 2,
+  },
+  {
+    event_id: 1,
+    start_at: '2018-07-16 10:00:00',
+    end_at: '2018-07-16 12:00:00',
+    room_id: 3,
+
+  },
+  {
+    event_id: 2,
+    start_at: '2018-07-16 13:00:00',
+    end_at: '2018-07-16 15:00:00',
+    room_id: 3,
+  },
+  {
+    event_id: 3,
+    start_at: '2018-07-17 12:00:00',
+    end_at: '2018-07-17 14:00:00',
+    room_id: 2,
+  },
+  ]);
+  await models.ExtBookings.bulkCreate([{
+    eventTitle: 'امسية شعرية',
+    booking_id: 1,
+    client_id: 1,
+  },
+  {
+    client_id: 2,
+    booking_id: 5,
+    eventTitle: 'لقاء ثقافي',
+  },
+  {
+    client_id: 3,
+    booking_id: 6,
+    eventTitle: 'ندوة سياسية',
+  },
+  ]);
+  await models.sequelize.close();
 });
