@@ -1,0 +1,58 @@
+<div class="roomHeader">
+  {{roomName}}
+</div>
+<div class="tableContainer">
+  <div class="tableHeaders row">
+    <div class="bookNameHeader">
+          صاحب الحجز
+    </div>
+    <div class="eventTitleHeader">
+          عنوان الفعالية
+    </div>
+    <div class="phoneHeader">
+          رقم الجوال
+    </div>
+    <div class="timeHeader">
+          وقت الفعالية
+    </div>
+    <div class="statusHeader">
+          الاجراءات
+    </div>
+
+  </div>
+  {{#each clients}}
+  <div class="tableElements row">
+    <div class="bookeNameElement">
+          {{this.client.name}}
+    </div>
+    <div class="eventTitleElement">
+          {{this.event_title}}
+    </div>
+    <div class="phoneElement">
+          {{this.client.phone}}
+    </div>
+    <div class="timeElement">
+          {{getDate this.booking.start_at}} - {{getTime this.booking.start_at}}
+    </div>
+    <div class="statusElement">
+          <div class="checkDiv">
+            <label for="checkBox">
+              <div id="checkIcon">
+              </div>
+            </label>
+            <input type="checkbox" id="checkBox">
+          </div>
+          <div class="deleteDiv">
+            <div id="deleteIcon">
+            </div>
+
+          </div>
+    </div>
+
+  </div>
+  {{/each}}
+
+
+
+
+</div>
