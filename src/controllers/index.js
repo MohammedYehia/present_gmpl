@@ -14,6 +14,6 @@ router
   .get('/events', events)
   .get('/courses', events)
   .get('/eventdetails/:id', checkId, eventDetails)
-  .get('/register/:id', courseRegisteration);
+  .get('/register/:id', checkId, courseRegisteration);
 
 export default router;
