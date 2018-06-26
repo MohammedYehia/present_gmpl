@@ -34,16 +34,23 @@ app.use(controllers);
 
 app.use((req, res) => {
   res.status(404).render('error', {
+    cssFile: 'style',
     statusCode: 404,
-    errorMessage: 'Page not found',
+    errorMessage: 'Page Not Found',
   });
 });
 
-// app.use((err, req, res, next) => {
-//   res.status(500).render('error', {
-//     statusCode: 500,
-//     errorMessage: 'Internal server error',
-//   });
-// });
+
+app.use((err, req, res, next) => {
+  if (err.isJoi) {
+    res.status(401).send('Unauthorized');
+  } else {
+    res.status(500).render('error', {
+      cssFile: 'style',
+      statusCode: 500,
+      errorMessage: 'Internal server error',
+    });
+  }
+});
 
 export default app;
