@@ -1,0 +1,41 @@
+
+<div class="eventsPageTitle">
+  <h1>COURSES</h1>
+</div>
+<div class="Container">
+  {{#each courses}}
+  <div class="item">
+    <div class="itemHeader">
+      <div class="itemTitle">
+
+        <h4> {{addHash this.events_course.title}}</h4>
+
+      </div>
+      <div class="right">
+        <div class="buttons"><a class="editButton" href="/admin/event/edit/id">تعديل</a></div>
+        <div class="buttons"><a class="deleteButton" href="/admin/event/delete/id">حذف</a></div>
+      </div>
+    </div>
+    <div class="itemBody">
+      <!-- WE Need Hepler here to cut the description -->
+      <h4>{{ descriptionTruncate this.events_course.description}}</h4>
+
+
+
+    </div>
+    <div class="itemFooter">
+      <div class="itemTime">
+        {{log this.events_courses}} hi
+
+      </div>
+      <div class="itemPlace">
+        <h6><span>Event Place :</span>Room 1 svvjsmvk skfmsk</h6>
+
+      </div>
+
+    </div>
+
+  </div>
+  {{/each}}
+
+</div>
