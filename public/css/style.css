@@ -104,6 +104,15 @@ a{
   background-color: var(--orange);
   width: 80px;
   margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  font-family: 'Amiri', serif;
+}
+
+.hidden {
+  display: none;
 }
 
 /* events section start */
@@ -156,3 +165,21 @@ a{
   background-color: var(--lochmara);
   color: var(--alice-blue)
 }
+
+/* bookings section start */
+#calendar {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.swal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swal-form input {
+  width: 70%;
+  margin-top: 10px;
+}
+/* bookings section end */

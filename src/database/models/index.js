@@ -8,7 +8,7 @@ models.Rooms = sequelize.import('./rooms');
 models.RoomImgs = sequelize.import('./rooms_imgs');
 models.EventCourses = sequelize.import('./event_courses');
 models.Staff = sequelize.import('./staff');
-models.ClientCourses = sequelize.import('./user_courses');
+models.ClientCourses = sequelize.import('./client_courses');
 models.ExtBookings = sequelize.import('./ext_bookings');
 
 // Relations;

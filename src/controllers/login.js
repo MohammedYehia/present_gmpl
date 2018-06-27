@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import models from './../database/models/index';
-import createToken from './create_token';
+import { createToken } from './create_token';
 
 const getLogin = (req, res) => {
   res.render('login', {
