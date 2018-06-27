@@ -27,7 +27,7 @@ const postLogin = (req, res, next) => {
             if (tokenErr) {
               next(tokenErr);
             } else if (isToken) {
-              res.status(200).send(JSON.stringify({ rediect: '/admin/home' }));
+              res.status(200).send(JSON.stringify({ redirect: '/admin/home' }));
             }
           });
         } else {

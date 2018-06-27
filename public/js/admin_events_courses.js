@@ -19,8 +19,10 @@ deleteButtons.forEach(item=>{
         .then(res=>{
           if (res.err) {
             swal("فشل!", res.err.errMsg, "error");
-          }else if(res.rediect){
-            window.location=res.rediect
+          }else if(res.redirect){
+            swal("تم!", "تمت عملية الحذف بنجاح!", "success").then(t=>{
+              window.location=res.redirect
+            });
           }
         })
 

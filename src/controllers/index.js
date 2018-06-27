@@ -10,7 +10,7 @@ import adminEvents from './admin_events';
 import adminCourses from './admin_courses';
 import authintication from './authintication';
 import adminHome from './admin_home';
-import adminDeleteEvent from './admin_delete_event';
+import adminDeleteEventsCourses from './admin_delete_events_courses';
 
 
 const router = express.Router();
@@ -26,7 +26,7 @@ router
   .post('/admin/login', validLogin, postLogin)
   .get('/admin/events', adminEvents)
   .get('/admin/courses', adminCourses)
-  .post('/admin/delete/courses/:id', adminDeleteEvent)
+  .post('/admin/delete/(|courses|events)/:id', adminDeleteEventsCourses)
   .get('/admin/home', adminHome);
 
 export default router;
