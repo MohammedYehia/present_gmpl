@@ -250,7 +250,7 @@
   margin-top: 20px;
 }
 
-#eventImage {
+#eventImage, #courseImage {
   display: none;
 }
 
