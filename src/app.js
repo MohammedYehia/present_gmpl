@@ -5,7 +5,7 @@ import path from 'path';
 import favicon from 'serve-favicon';
 import fileUpload from 'express-fileupload';
 import controllers from './controllers';
-import helpers from './views/helpers/index';
+import helpers from './views/helpers';
 
 const app = express();
 

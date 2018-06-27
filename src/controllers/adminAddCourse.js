@@ -12,25 +12,19 @@ export const postCourse = (req, res, next) => {
     courseTitle, courseDiscription, courseFees,
   } = req.body;
   const { courseImage } = req.files;
-  if (courseTitle && courseDiscription && courseFees) {
-    uploadPhoto(courseImage, next, (photo) => {
-      const imgLink = photo.url;
-      models.EventCourses.create({
-        title: courseTitle,
-        description: courseDiscription,
-        image: imgLink,
-        fees: courseFees,
+  uploadPhoto(courseImage, next, (photo) => {
+    const { url } = photo;
+    models.EventCourses.create({
+      title: courseTitle,
+      description: courseDiscription,
+      image: url,
+      fees: courseFees,
+    })
+      .then((data) => {
+        res.redirect('/admin/events');
       })
-        .then((data) => {
-          res.redirect('/admin/events');
-        })
-        .catch((e) => {
-          next(e);
-        });
-    });
-  } else {
-    res.render('adminAddEvent', {
-      pageTitle: 'adminAddCourse', swal: true, layout: 'admin', errMsg: 'all fields are requierd ',
-    });
-  }
+      .catch((e) => {
+        next(e);
+      });
+  });
 };
