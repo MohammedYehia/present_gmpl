@@ -4,9 +4,9 @@ import exhbs from 'express-handlebars';
 import path from 'path';
 import favicon from 'serve-favicon';
 import fileUpload from 'express-fileupload';
+import cookieParser from 'cookie-parser';
 import controllers from './controllers';
 import clientsApi from './controllers/api/clients';
-import cookieParser from 'cookie-parser';
 import helpers from './views/helpers';
 
 const app = express();
