@@ -22,7 +22,7 @@ const createForm = (room_name, start_at, end_at, referrer) => {
 
 const trimTime = (time) => {
   time = new Date(time);
-  return (time.getUTCHours()<10 ? ('0'+time.getUTCHours()):time.getUTCHours())+':'+ (time.getMinutes()<10 ? ('0'+time.getMinutes()):time.getMinutes());
+  return (time.getHours()<10 ? ('0'+time.getHours()):time.getHours())+':'+ (time.getMinutes()<10 ? ('0'+time.getMinutes()):time.getMinutes());
 }
 
 const verifyStart = (start, end, resource, referrer) => {
