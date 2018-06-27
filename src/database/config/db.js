@@ -13,7 +13,7 @@ const {
 const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
   dialect: DB_DIALECT,
   operatorsAliases: false,
-  host: process.env.HOSTNAME || 'localhost',
+  host: process.env.DB_HOST || 'localhost',
   logging: false,
   define: {
     underscored: true,
