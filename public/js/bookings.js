@@ -1,6 +1,6 @@
-const swalLoad = () => {
+const swalLoad = (error) => {
   swal({
-    text: 'حدث خطأ ما اثناء التحميل، يرجى تحديث الصفحة مرة اخرى',
+    text: `حدث خطأ ما اثناء تحميل ${error}، يرجى تحديث الصفحة مرة اخرى`,
     buttons: {
       cancel: {
         text: 'للخلف',
@@ -62,14 +62,14 @@ $('#calendar').fullCalendar({
     url: '/api/v1/rooms',
     type: 'get',
     error: (error) => {
-      swalLoad();
+      swalLoad('قاعات');
     }
   },
   events: {
     url: '/api/v1/bookings',
     type: 'get',
     error: (error) => {
-      swalLoad();
+      swalLoad('حجوزات');
     },
   },
 });
