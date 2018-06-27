@@ -756,14 +756,14 @@ td {
 
   nav[role="navigation"] {
     position: fixed;
-    width: 200px;
+    width: 300px;
     top: 75px;
     bottom: 0px;
     right: 7px;
   }
 
   main[role="main"] {
-    margin: 65px 200px 40px 0;
+    margin: 65px 00px 40px 0;
   }
   main[role="main"]:after {
     content: "";
@@ -800,12 +800,12 @@ td {
     margin-left: 200px;
   }
   .main{
-    margin-right: 200px
+    margin-right: 300px
   }
 }
 @media screen and (min-width: 900px) {
   .main{
-    margin-right: 200px
+    margin-right: 300px
   }
   footer[role="contentinfo"] {
     position: fixed;
