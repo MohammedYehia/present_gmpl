@@ -178,6 +178,10 @@ a{
   align-items: center;
 }
 
+.swal-form h4 {
+  margin-bottom: 10px;
+}
+
 .swal-form input {
   width: 70%;
   margin-top: 10px;

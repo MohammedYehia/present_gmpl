@@ -3,6 +3,8 @@
   <div class="events-courses ">
   <section class="fieldset">
     <div class="event single">
+      <h2 id="eventTitle">{{detail.title}}</h2>
+      <br>
       <img class="eventimg" src="{{detail.image}}" alt="">
       <div class="details">
         {{detail.description}}
@@ -25,7 +27,6 @@
 </div>
 
 </main>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 {{#if js}}
 {{#each js}}
   <script type="text/javascript" src="/js/{{this}}.js"></script>
