@@ -1,4 +1,4 @@
-const createForm = (room_name, start_at, end_at, referrer) => {
+const createForm = (room_name, start_at, end_at, referrer, courseName) => {
   const formdata = JSON.parse(localStorage.getItem('form')) || '';
   if(referrer === 'bookings'){
       return `
@@ -13,6 +13,7 @@ const createForm = (room_name, start_at, end_at, referrer) => {
     ` 
   }else{
     return `
+      <h4> تسجيل في  ${courseName}</h4>
       <input type="text" value='${formdata.name || ''}'  name="name" placeholder="الاسم كاملاً" id="name">
       <input type="email" value='${formdata.email || ''}'  name="email" placeholder="البريد الالكتروني" id="email">
       <input type="text" value='${formdata.phone || ''}' name="phone" id="phone" required placeholder="رقم جوال للتواصل">
@@ -29,9 +30,9 @@ const verifyStart = (start, end, resource, referrer) => {
   const form = document.createElement("form");
       form.classList.add('swal-form'); 
       if(resource){
-        form.innerHTML = createForm(resource.title,start,end,referrer);
+        form.innerHTML = createForm(resource.title,start,end,referrer,'');
       }else{
-        form.innerHTML = createForm('','','',referrer);
+        form.innerHTML = createForm('','','',referrer, 'addacourseanme');
       }     
   const obj = {
     content: form,

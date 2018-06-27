@@ -1,1 +1,3 @@
-export default t => t.toLocaleTimeString().substr(0, 5);
+export default (t) => {
+  if (t) return t.toLocaleTimeString().substr(0, 5);
+}
