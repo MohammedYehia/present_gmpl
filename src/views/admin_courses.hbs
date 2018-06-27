@@ -1,4 +1,3 @@
-
 <div class="eventsPageTitle">
   <h1>الدورات</h1>
 </div>
@@ -7,32 +6,28 @@
   <div class="item">
     <div class="itemHeader">
       <div class="itemTitle">
-
         <h4> {{addHash this.title}}</h4>
-
       </div>
       <div class="right">
-        <div class="buttons"><a class="editButton"  id="/admin/edit/courses/{{this.id}}">تعديل</a></div>
-        <div class="buttons"><a class="deleteButton"  id="/admin/delete/courses/{{this.id}}">حذف</a></div>
+        <div class="buttons">
+          <a class="editButton" id="/admin/edit/courses/{{this.id}}">تعديل</a>
+        </div>
+        <div class="buttons">
+          <a class="deleteButton" id="/admin/delete/courses/{{this.id}}">حذف</a>
+        </div>
       </div>
     </div>
     <div class="itemBody">
       <h4>{{ descriptionTruncate this.description}}</h4>
-
-
-
     </div>
     <div class="itemFooter">
       <div class="itemTime">
-        <h6><span>سعر الدورة  : </span>{{this.fees}} $ </h6>
+        <h6>
+          <span>سعر الدورة : </span>{{this.fees}} $ </h6>
       </div>
       <div class="itemPlace">
-
       </div>
-
     </div>
-
   </div>
   {{/each}}
-
 </div>
