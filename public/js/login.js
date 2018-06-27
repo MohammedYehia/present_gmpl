@@ -16,8 +16,8 @@ loginForm.addEventListener('submit',function(e){
     .then(res=>{
       if (res.err) {
         swal("Error!", res.err.errMsg, "error");
-      }else if(res.rediect){
-        window.location=res.rediect
+      }else if(res.redirect){
+        window.location=res.redirect
       }
     })
 })
