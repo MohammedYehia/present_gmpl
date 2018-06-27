@@ -3,7 +3,7 @@ import uploadPhoto from './uploadPhotos';
 
 export const getAdminPage = (req, res) => {
   res.render('adminAddEvent', {
-    pageTitle: 'adminAddEvent', swal: true, layout: 'admin',
+    pageTitle: 'adminAddEvent', swal: true, layout: 'admin', jsFile: ['admin', 'admin_events_courses'],
   });
 };
 
