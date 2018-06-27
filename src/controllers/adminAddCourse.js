@@ -7,12 +7,12 @@ export const getAddCoursePage = (req, res) => {
   });
 };
 
-export const postCourse = (req, res, next) => {
+export const postCourse = async (req, res, next) => {
   const {
     courseTitle, courseDiscription, courseFees,
   } = req.body;
   const { courseImage } = req.files;
-  uploadPhoto(courseImage, next, (photo) => {
+  await uploadPhoto(courseImage, next, (photo) => {
     const { url } = photo;
     models.EventCourses.create({
       title: courseTitle,
@@ -21,7 +21,7 @@ export const postCourse = (req, res, next) => {
       fees: courseFees,
     })
       .then((data) => {
-        res.redirect('/admin/events');
+        res.redirect('/admin/courses');
       })
       .catch((e) => {
         next(e);

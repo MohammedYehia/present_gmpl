@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/css/style.css">
 {{#if styleLinks}}
 {{#each styleLinks}}
-<link rel="stylesheet" href="{{this}}">
+<link rel="stylesheet" href="/css/fullcalendar/{{this}}.css">
 {{/each}}
 {{/if}}
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -13,7 +13,8 @@
 
 {{#if jsLinks}}
 {{#each jsLinks}}
-<script src="{{this}}"></script>
+  <script type="text/javascript" src="/js/fullcalendar/{{this}}.js"></script>
 {{/each}}
 {{/if}}
+
 <title>المكتبة العامة|بلدية غزة</title>
