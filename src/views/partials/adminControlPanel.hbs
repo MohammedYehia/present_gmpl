@@ -1,62 +1,3 @@
-<!-- <div class="adminInfo">
-  <img src="https://www.shareicon.net/data/512x512/2016/09/01/822742_user_512x512.png" alt="">
-  <h2>تم تسجيل دخولك باسم المسؤول: Hassan</h2>
-</div>
-<div class="dropDownContainer">
-
-
-    <ul class="eventsDropdown ">
-      <li class="mainDropDownTitle mainDropDown">
-          الفعاليات
-      </li>
-      <li class="subDropDown" myAttri="myVal">
-        <a href="/admin/addevent">
-        اضافة فعالية
-      </a>
-      </li>
-      <li class="subDropDown">
-        <a href="/admin/events">
-         عرض الفعاليات
-       </a>
-      </li>
-    </ul>
-
-    <ul class="coursesDropdown ">
-      <li class="mainDropDownTitle mainDropDown">
-          الدورات
-      </li>
-      <li class="subDropDown" myAttri="myVal">
-        <a href="/admin/addcourse">
-          اضافة دورة
-        </a>
-      </li>
-      <li class="subDropDown">
-        <a href="/admin/courses">
-           عرض الدورات
-         </a>
-      </li>
-    </ul>
-    <ul class="bookingDropdown ">
-      <li class="mainDropDownTitle mainDropDown">
-          حجوزات القاعات
-      </li>
-      <li class="subDropDown" myAttri="myVal">
-        <a href="/admin/room/1">
-          قاعة تورينو
-        </a>
-      </li>
-      <li class="subDropDown">
-        <a href="/admin/room/2">
-           قاعة المركز التركي
-         </a>
-      </li>
-      <li class="subDropDown">
-        <a href="/admin/room/3">
-           قاعة الأنشطة
-         </a>
-      </li>
-    </ul>
-</div> -->
 <header role="banner">
   <h1>لوحة التحكم</h1>
   <ul class="utilities">
@@ -65,53 +6,38 @@
   </ul>
 </header>
 <nav role='navigation'>
-  <div class="mainLink">
-    <a href="/admin/home"><i class="fas fa-home"></i> الصفحة الرئيسة </a>
+  <div class="mainLink" id="HomePage">
+    <a href="/admin/home" id="/admin/home"><i class="fas fa-home"></i> الصفحة الرئيسة </a>
   </div>
-  <div class="mainLink">
+  <div class="mainLink" id="events">
     <a href="#"><i class="fas fa-calendar-alt "></i> الفعاليات </a>
-    <div class="subLink">
+    <div class="subLink" id="/admin/events">
       <a href="/admin/events">  <i class="fas fa-calendar-alt"></i>  عرض الفعاليات </a>
     </div>
-    <div class="subLink">
+    <div class="subLink" id="/admin/addevent">
       <a href="/admin/addevent">  <i class="fas fa-calendar-plus"></i>  اضافة فعالية </a>
     </div>
   </div>
-  <div class="mainLink">
+  <div class="mainLink" id="courses">
     <a href="#">  <i class="fas fa-graduation-cap"></i> الدورات </a>
-    <div class="subLink">
+    <div class="subLink" id="/admin/courses">
       <a href="/admin/courses">  <i class="fas fa-graduation-cap"></i> عرض الدورات </a>
     </div>
-    <div class="subLink">
+    <div class="subLink" id="/admin/addcourse">
       <a href="/admin/addcourse">  <i class="fas fa-calendar-plus"></i> اضافة دورة </a>
     </div>
 
   </div>
-  <div class="mainLink">
-    <li class="mainLink"><a href="#">  <i class="fas fa-list-alt"></i> حجوزات القاعات </a></li>
-    <div class="subLink">
+  <div class="mainLink" id="rooms">
+    <a href="#">  <i class="fas fa-list-alt"></i> حجوزات القاعات </a>
+    <div class="subLink" id="/admin/room/1">
       <a href="/admin/room/1">  <i class="fas fa-archway"></i> قاعة تورينو </a>
     </div>
-    <div class="subLink">
+    <div class="subLink" id="/admin/room/2">
       <a href="/admin/room/2">  <i class="fas fa-archway"></i> قاعة المركز العثماني </a>
     </div>
-    <div class="subLink">
+    <div class="subLink" id="/admin/room/3">
       <a href="/admin/room/3">  <i class="fas fa-archway"></i> قاعة الانشطة </a>
     </div>
   </div>
-
-  <!-- <ul class="main">
-    <li class="mainLink"><a href="/admin/home"><i class="fas fa-home"></i> الصفحة الرئيسة </a></li>
-    <li class="mainLink"><a href="#"><i class="fas fa-calendar-alt "></i> الفعاليات </a></li>
-    <li class="subLink"><a href="/admin/events">  <i class="fas fa-calendar-alt"></i>  عرض الفعاليات </a></li>
-    <li class="subLink"><a href="/admin/addevent">  <i class="fas fa-calendar-plus"></i>  اضافة فعالية </a></li>
-    <li class="mainLink"><a href="#">  <i class="fas fa-graduation-cap"></i> الدورات </a></li>
-    <li class="subLink"><a href="/admin/courses">  <i class="fas fa-graduation-cap"></i> عرض الدورات </a></li>
-    <li class="subLink"><a href="/admin/addcourse">  <i class="fas fa-calendar-plus"></i> اضافة دورة </a></li>
-    <li class="mainLink"><a href="#">  <i class="fas fa-list-alt"></i> حجوزات القاعات </a></li>
-    <li class="subLink"><a href="/admin/room/1">  <i class="fas fa-archway"></i> قاعة تورينو </a></li>
-    <li class="subLink"><a href="/admin/room/2">  <i class="fas fa-archway"></i> قاعة المركز العثماني </a></li>
-    <li class="subLink"><a href="/admin/room/3">  <i class="fas fa-archway"></i> قاعة الانشطة </a></li>
-
-  </ul> -->
 </nav>
