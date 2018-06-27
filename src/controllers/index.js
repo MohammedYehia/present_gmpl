@@ -9,6 +9,7 @@ import validLogin from './valid_login';
 import adminEvents from './admin_events';
 import adminCourses from './admin_courses';
 import authintication from './authintication';
+import adminHome from './admin_home';
 
 const router = express.Router();
 
@@ -22,5 +23,6 @@ router
   .get('/admin/logout', logout)
   .post('/admin/login', validLogin, postLogin)
   .get('/admin/events', adminEvents)
-  .get('/admin/courses', adminCourses);
+  .get('/admin/courses', adminCourses)
+  .get('/admin/home', adminHome);
 export default router;
