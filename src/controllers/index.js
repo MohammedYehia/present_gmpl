@@ -12,25 +12,24 @@ import adminEvents from './admin_events';
 import adminCourses from './admin_courses';
 import adminHome from './admin_home';
 import adminRoom from './admin_room';
+import authintication from './authintication';
 
-const controler = express.Router();
+const router = express.Router();
 
-controler
+router
   .get('/', home)
   .get('/events', events)
   .get('/courses', events)
   .get('/bookings', bookings)
   .post('/phone/verification/start', phoneVerifyStart)
   .get('/eventdetails/:id', checkId, eventDetails)
+  .use('/admin', authintication)
+  .get('/admin/home', adminHome)
+  .get('/admin/login', getLogin)
+  .post('/admin/login', validLogin, postLogin)
+  .get('/admin/logout', logout)
+  .get('/admin/events', adminEvents)
+  .get('/admin/courses', adminCourses)
+  .get('/admin/room/:id', adminRoom);
   
-const adminControler = new express.Router();
-  
-adminControler
-  .post('/login', validLogin, postLogin)
-  .get('/logout', logout)
-  .get('/home', adminHome)
-  .get('/events', adminEvents)
-  .get('/courses', adminCourses)
-  .get('/room/:id', adminRoom);
-
-export { controler, adminControler };
+export default router;
