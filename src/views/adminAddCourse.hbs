@@ -1,0 +1,30 @@
+<form class="cp-form" id="addEvent" enctype="multipart/form-data" action="/admin/addcourse" method="POST">
+  <h2 class="cp-form-title" id="cp-form-title">اضافة دورة تدريبية</h2>
+  {{#if errMsg}}
+    <h3 class="errMsg">{{errMsg}}</h3>
+  {{/if}}
+  <div class="cp-inputs-div" id="cp-inputs-div">
+    <div class="">
+      <label class="cp-label" for="courseTitle" id="cp-lable-0">عنوان الدورة التدريبية</label>
+      <input class="cp-input" type="Text" name="courseTitle" id="courseTitle">
+    </div>
+    <div class="">
+      <label class="cp-label" for="courseFees" id="cp-lable-0">رسوم الدورة التدريبية</label>
+      <input class="cp-input" type="Text" name="courseFees" id="courseFees">
+    </div>
+    <div class="">
+      <div class="">
+        <label class="cp-label" for="courseDiscription" id="cp-lable-3">تفاصيل الدورة التدريبية</label>
+        <textarea class="cp-input" name="courseDiscription" id="courseDiscription" rows="8" cols="40"></textarea>
+      </div>
+      <div id="eventImageDiv">
+        <label for="courseImage"  id="cp-lable-4">
+          <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/upload-512.png" alt="">
+         <span>اضف صورة اعلانية للدورة التدريبية</span>
+      </label>
+        <input type="file" class="cp-input" name="courseImage" id="eventImage" multiple>
+      </div>
+    </div>
+  </div>
+  <button class="cp-button" type="submit" id="cp-submit">اضافة</button>
+</form>
