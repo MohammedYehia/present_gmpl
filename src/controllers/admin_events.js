@@ -1,6 +1,6 @@
 import models from './../database/models/index';
 
-export default (req, res) => {
+export default (req, res, next) => {
   models.Bookings.findAll({
     include: [{
       model: models.EventCourses,
@@ -14,6 +14,9 @@ export default (req, res) => {
       pageTitle: 'admin Events',
       layout: 'admin',
       events: result,
-      jsFile: ['admin'],
-    }));
+      swal: true,
+      jsFile: ['admin', 'admin_events_courses'],
+    })).catch((e) => {
+      next(e);
+    });
 };

@@ -16,6 +16,8 @@ import adminHome from './admin_home';
 import adminRoom from './admin_room';
 import authintication from './authintication';
 import { validateAddEvent, validateAddCourse } from './validate_course_event';
+import adminDeleteEventsCourses from './admin_delete_events_courses';
+
 
 const router = express.Router();
 
@@ -34,11 +36,10 @@ router
   .get('/admin/events', adminEvents)
   .get('/admin/courses', adminCourses)
   .get('/admin/room/:id', adminRoom)
-  .get('/courses', events)
   .get('/admin/addevent', getAdminPage)
   .post('/admin/addevent', validateAddEvent, postEvent)
   .get('/admin/addcourse', getAddCoursePage)
   .post('/admin/addcourse', validateAddCourse, postCourse)
-  .get('/eventdetails/:id', checkId, eventDetails);
+  .post('/admin/delete/(|courses|events)/:id', adminDeleteEventsCourses);
 
 export default router;
