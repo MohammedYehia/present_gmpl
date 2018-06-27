@@ -1,7 +1,8 @@
   <main class="main container">
     {{> bookingBanner}}
     <div class="events-courses ">
-    <section class="fieldset">
+    <div class="eventsSection">
+      <section class="fieldset">
       <h2>الفعاليات</h2>
       <div class="events">
         {{#each events}}
@@ -17,13 +18,13 @@
         </div>
         </a>
       </div>
-
       {{/each}}
     </div>
     <div class="more">
       <a href="/events">المزيد</a>
     </div>
     </section>
+    </div>
 
         <section class="fieldset">
       <h2>الدورات التدريبية</h2>

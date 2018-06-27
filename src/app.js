@@ -4,9 +4,9 @@ import exhbs from 'express-handlebars';
 import path from 'path';
 import favicon from 'serve-favicon';
 import fileUpload from 'express-fileupload';
+import cookieParser from 'cookie-parser';
 import controllers from './controllers';
 import clientsApi from './controllers/api/clients';
-import cookieParser from 'cookie-parser';
 import helpers from './views/helpers';
 
 const app = express();
@@ -33,12 +33,13 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(controllers);
-app.use('/api/v1', clientsApi)
+app.use('/api/v1', clientsApi);
 
 app.use((req, res) => {
   res.status(404).render('error', {
+    layout: 'error',
     statusCode: 404,
-    errorMessage: 'Page Not Found',
+    errorMsg: 'THE PAGE YOU ARE LOOKING FOR MIGHT HAVE BEEN REMOVED, HAD ITS NAME CHANGED OR IS TEMPORARILY UNAVAILABLE',
   });
 });
 
@@ -50,7 +51,8 @@ app.use((err, req, res, next) => {
     console.error('505 server error', err);
     res.status(500).render('error', {
       statusCode: 500,
-      errorMessage: 'Internal server error',
+      errorMsg: 'Internal server error',
+      layout: 'error',
     });
   }
 });

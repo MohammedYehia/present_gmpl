@@ -8,12 +8,15 @@ export const getAddCoursePage = (req, res) => {
   });
 };
 
+const uploadPromise = (req, res)=> new Promise((resolve, reject) => resolve(req.files));
+
+
 export const postCourse = async (req, res, next) => {
   const {
     courseTitle, courseDiscription, courseFees,
   } = req.body;
-  const { courseImage } = req.files;
-  await uploadPhoto(courseImage, next, (photo) => {
+  const files = await uploadPromise(req, res);
+  uploadPhoto(files.courseImage, next, (photo) => {
     const { url } = photo;
     models.EventCourses.create({
       title: courseTitle,
@@ -21,7 +24,7 @@ export const postCourse = async (req, res, next) => {
       image: url,
       fees: courseFees,
     })
-      .then((data) => {
+      .then(() => {
         res.redirect('/admin/courses');
       })
       .catch((e) => {

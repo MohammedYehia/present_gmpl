@@ -1,6 +1,6 @@
 <main class="main container">
   {{> bookingBanner}}
-    <div class="events-courses ">
+  <div class="events-courses ">
     <section class="fieldset">
       {{#if events}}
       <h2>الفعاليات</h2>
@@ -8,41 +8,35 @@
       <h2>الدورات التدريبية</h2>
       {{/if}}
       <div class="events">
-      {{#if events}}
-        {{#each events}}
-      <div class="event">
-        <a href="/eventdetails/{{this.id}}">
-        <h2>{{this.title}}</h2>
-        <img class="eventimg" src="{{this.image}}" alt="events">
-        <div class="details">{{this.description}}</div>
-        <div class="time">
-          <span>التاريخ:&nbsp;</span><span>{{getDate this.event_time}}</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span>الساعة:&nbsp;</span><span>{{getTime this.event_time}}</span>
-        </div>
-        </a>
-      </div>
-
-
-      {{/each}}
-      {{else}}
-        {{#each courses}}
+        {{#if events}} {{#each events}}
         <div class="event">
           <a href="/eventdetails/{{this.id}}">
-          <h2>{{this.title}}</h2>
-          <img class="eventimg" src="{{this.image}}" alt="course">
-          <div class="details">{{this.description}}</div>
-          <div class="time">
-            <span>السعر: &nbsp; </span>
-            <span>{{this.fees}}$</span>
-          </div>
+            <h2>{{this.title}}</h2>
+            <img class="eventimg" src="{{this.image}}" alt="events">
+            <div class="details">{{this.description}}</div>
+            <div class="time">
+              <span>التاريخ:&nbsp;</span>
+              <span>{{getDate this.event_time}}</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span>الساعة:&nbsp;</span>
+              <span>{{getTime this.event_time}}</span>
+            </div>
           </a>
         </div>
-        {{/each}}
-      {{/if}}
-    </div>
-
+        {{/each}} {{else}} {{#each courses}}
+        <div class="event">
+          <a href="/eventdetails/{{this.id}}">
+            <h2>{{this.title}}</h2>
+            <img class="eventimg" src="{{this.image}}" alt="course">
+            <div class="details">{{this.description}}</div>
+            <div class="time">
+              <span>السعر: &nbsp; </span>
+              <span>{{this.fees}}$</span>
+            </div>
+          </a>
+        </div>
+        {{/each}} {{/if}}
+      </div>
     </section>
   </div>
-
-  </main>
+</main>

@@ -22,7 +22,8 @@
           <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/upload-512.png" alt="">
          <span>اضف صورة اعلانية للدورة التدريبية</span>
       </label>
-        <input type="file" class="cp-input" name="courseImage" id="courseImage" multiple>
+        <img id="blah" alt="" width="100" height="100" />
+        <input type="file" class="cp-input" name="courseImage" id="courseImage" multiple   onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
       </div>
     </div>
   </div>

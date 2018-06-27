@@ -16,16 +16,17 @@
             <div class="hidden" id="courseId">{{detail.id}}</div>
             سجل الان
           </div>
-        {{else}}
-        <span>التاريخ:&nbsp;</span><span>{{getDate detail.event_time}}</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>الساعة:&nbsp;</span><span>{{getTime detail.event_time}}</span>
-        {{/if}}
+          {{else}}
+          <span>التاريخ:&nbsp;</span>
+          <span>{{getDate detail.event_time}}</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span>الساعة:&nbsp;</span>
+          <span>{{getTime detail.event_time}}</span>
+          {{/if}}
+        </div>
       </div>
-    </div>
-  </section>
-</div>
-
+    </section>
+  </div>
 </main>
 {{#if js}}
 {{#each js}}
