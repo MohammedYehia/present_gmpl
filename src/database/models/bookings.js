@@ -7,6 +7,5 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.DATE,
     },
   });
-
   return Bookings;
 };

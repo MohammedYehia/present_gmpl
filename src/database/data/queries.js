@@ -189,6 +189,7 @@ models.sequelize.sync({ force: true }).then(async () => {
     start_at: '2018-07-16 10:00:00',
     end_at: '2018-07-16 12:00:00',
     room_id: 3,
+
   },
   {
     event_id: 2,
