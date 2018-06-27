@@ -1,7 +1,7 @@
 import models from './../database/models/index';
 
 const { Op } = models.Sequelize;
-export default (req, res) => {
+export default (req, res, next) => {
   models.EventCourses.findAll({
     where: { fees: { [Op.ne]: null } },
   })
@@ -13,5 +13,7 @@ export default (req, res) => {
         swal: true,
         jsFile: ['admin', 'admin_events_courses'],
       });
+    }).catch((e) => {
+      next(e);
     });
 };

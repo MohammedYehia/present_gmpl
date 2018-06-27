@@ -1,8 +1,6 @@
-console.log(1);
 var deleteButtons = document.querySelectorAll('.deleteButton')
 deleteButtons.forEach(item=>{
   item.addEventListener('click',(e)=>{
-    console.log(item.id);
     e.preventDefault()
     swal({
     title: "هل انت متأكد من انك تريد حذف هذا العنصر؟",
