@@ -1,6 +1,5 @@
 import models from '../database/models';
 
-// const { Op } = models.Sequelize;
 export default (req, res) => {
   const { url } = req;
   models.EventCourses.findAll({})
