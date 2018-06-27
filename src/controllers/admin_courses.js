@@ -10,7 +10,8 @@ export default (req, res) => {
         pageTitle: 'admin Courses',
         layout: 'admin',
         courses: result,
-        jsFile: ['admin'],
+        swal: true,
+        jsFile: ['admin', 'admin_events_courses'],
       });
     });
 };

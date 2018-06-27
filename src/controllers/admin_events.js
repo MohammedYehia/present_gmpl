@@ -14,6 +14,7 @@ export default (req, res) => {
       pageTitle: 'admin Events',
       layout: 'admin',
       events: result,
-      jsFile: ['admin'],
+      swal: true,
+      jsFile: ['admin', 'admin_events_courses'],
     }));
 };
