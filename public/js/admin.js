@@ -24,3 +24,7 @@ mainDropDown.forEach((node) => {
     }
   });
 });
+console.log(window.location.pathname);
+document.getElementById(window.location.pathname).classList.add('subActive')
+document.getElementById(window.location.pathname).parentNode.children[0].classList.add('mainActive')
+displaySubDiv(Array.prototype.slice.call(document.getElementById(window.location.pathname).parentNode.children).splice(1), 'block');
