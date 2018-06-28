@@ -13,15 +13,15 @@ export const phoneVerifyStart = (req, res) => {
     },
     body: `via=sms&phone_number=${data.phone}&country_code=970&code_length=6&locale=en`
     }, (error, response, body) => {
-      if (error) 
+      if (error)
        return  res.json({ err: 'Something went wrong try again'});
         const { success, message, seconds_to_expire } = JSON.parse(body);
         if (success) {
         createToken(data, res, (tokenErr, isToken) => {
-          if (tokenErr) 
+          if (tokenErr)
           return  res.json({ err: 'Something went wrong try again'})
           const msg = message.split('+')[1]
-          return   res.json({ err: null, secondsToExp: seconds_to_expire, msg: `تم ارسال الرسالة بنجاح الى \n ${msg}` });
+          return   res.json({ err: null, secondsToExp: seconds_to_expire, msg: `تم ارسال الرسالة بنجاح الى - \n ${msg}` });
         });
       } else {
         res.json({ err: 'Something went wrong try again'})
