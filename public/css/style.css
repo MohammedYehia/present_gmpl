@@ -18,7 +18,7 @@
 body {
   font-family: 'Amiri', serif;
   background-color: var(--background);
-  
+
 }
 
 a{
@@ -66,7 +66,7 @@ a{
   text-align: center;
   max-height: 60vh;
   color: var(--alice-blue);
-  
+
 }
 
 .hero .logo{
@@ -116,6 +116,25 @@ a{
 .main {
   margin-top: 20px;
 }
+.swal-form input {
+  width: 70%;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: none;
+  font-size: 14px;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.14);
+  padding: 10px 13px;
+  border-radius: 2px;
+  transition: border-color .2s;
+}
+.swal-form h5{
+font-size: 25px;
+}
+
 
 .more{
   background-color: var(--orange);
@@ -124,8 +143,17 @@ a{
   cursor: pointer;
   outline: none;
   border: none;
-  padding: 5px 10px;
   font-family: 'Amiri', serif;
+  height: 35px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.more a {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%
 }
 
 .more .hidden {
@@ -271,15 +299,15 @@ body * {
   width: 75px;
   height: 75px;
   margin: 20px auto;
-  display: block; 
+  display: block;
   text-align: center;
-  
+
   position: absolute;
   top: 10px;
   left: 0;
   right: 0;
   z-index: 5;
-  
+
   box-shadow: 0 0 0 0px rgba(255,255,255,0.5), 0 0 0 0px rgba(3, 108, 129, 0.5);
 }
 .box .icon-cont i {
@@ -312,7 +340,7 @@ body * {
   letter-spacing: 2px;
   padding: 15px;
   border-bottom: 1px solid rgba(255,255,255,0);
-  
+
   position: absolute;
   top: 125px;
   width: 70%;
@@ -344,12 +372,12 @@ body * {
   text-align: center;
   line-height: 35px;
   cursor: pointer;
-  
+
   position: absolute;
   left: 0;
   right: 0;
   bottom: 10px;
-  
+
 }
 .box a.expand span.minus {
   opacity: 0;
@@ -398,7 +426,7 @@ body * {
 .box.selected h3 {
   padding: 32px 15px 15px 15px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
-  
+
   width: 70%;
   top: 16px;
   left: 10%;
