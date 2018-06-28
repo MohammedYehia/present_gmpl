@@ -23,7 +23,10 @@ export const validateAddEvent = (req, res, next) => {
     eventTitle, eventDate, startTime, endTime, eventPlace, eventDiscription,
   }, schema, (notValid) => {
     if (notValid) {
-      res.send(JSON.stringify({ err: { errMsg: notValid.details[0].message } }));
+      // res.send(JSON.stringify({ err: { errMsg: notValid.details[0].message } }));
+      res.render('adminAddEvent', {
+        pageTitle: 'adminAddEvent', swal: true, layout: 'admin', errMsg: notValid.details[0].message,
+      });
     } else {
       next();
     }
@@ -38,7 +41,10 @@ export const validateAddCourse = (req, res, next) => {
     courseTitle, courseDiscription, courseFees,
   }, course, (notValid) => {
     if (notValid) {
-      res.send(JSON.stringify({ err: { errMsg: notValid.details[0].message } }));
+      // res.send(JSON.stringify({ err: { errMsg: notValid.details[0].message } }));
+      res.render('adminAddCourse', {
+        pageTitle: 'adminAddEvent', swal: true, layout: 'admin', errMsg: notValid.details[0].message,
+      });
     } else {
       next();
     }
