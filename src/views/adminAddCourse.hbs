@@ -6,16 +6,16 @@
   <div class="cp-inputs-div" id="cp-inputs-div">
     <div class="">
       <label class="cp-label" for="courseTitle" id="cp-lable-0">عنوان الدورة التدريبية</label>
-      <input class="cp-input" type="Text" name="courseTitle" id="courseTitle">
+      <input class="cp-input" type="Text" name="courseTitle" id="courseTitle" required>
     </div>
     <div class="">
       <label class="cp-label" for="courseFees" id="cp-lable-0">رسوم الدورة التدريبية</label>
-      <input class="cp-input" type="Text" name="courseFees" id="courseFees">
+      <input class="cp-input" type="Text" name="courseFees" id="courseFees" required>
     </div>
     <div class="">
       <div class="">
         <label class="cp-label" for="courseDiscription" id="cp-lable-3">تفاصيل الدورة التدريبية</label>
-        <textarea class="cp-input" name="courseDiscription" id="courseDiscription" rows="8" cols="40"></textarea>
+        <textarea class="cp-input" name="courseDiscription" id="courseDiscription" rows="8" cols="40" required></textarea>
       </div>
       <div id="eventImageDiv">
         <label for="courseImage"  id="cp-lable-4">
@@ -23,7 +23,7 @@
          <span>اضف صورة اعلانية للدورة التدريبية</span>
       </label>
         <img id="blah" alt="" width="100" height="100" />
-        <input type="file" class="cp-input" name="courseImage" id="courseImage" multiple   onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+        <input type="file" class="cp-input" name="courseImage" id="courseImage" multiple   onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])" required>
       </div>
     </div>
   </div>
