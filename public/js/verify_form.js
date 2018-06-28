@@ -116,12 +116,19 @@ const verifyStart = (start, end, resource, referrer, eventTitle) => {
 };
 
 const verifyCode = (response, start, end, resource, referrer, eventTitle) => {
+
   if (response.secondsToExp > 0) {
     const timer = setInterval(() => {
       const msg = document.querySelector('.swal-text');
       if (msg) {
         response.secondsToExp -= 1;
         msg.textContent = verifyMsg.replace(/#1/, response.secondsToExp);
+        const title = document.querySelector('.swal-title')
+        console.log(response.msg,'response.msg');
+        const num = response.msg.split('-').splice(1).join('-')
+        console.log(num,'num');
+        title.innerHTML=`تم ارسال رسالةبنجاح الى <span>${num}</span>`
+
       }
       if (response.secondsToExp === 0) {
         clearInterval(timer);
@@ -172,6 +179,7 @@ const verifyCode = (response, start, end, resource, referrer, eventTitle) => {
         },
       },
     }).then((value) => {
+
       if (value === '') {
         swal({
           title: 'خطأ',

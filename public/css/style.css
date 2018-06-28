@@ -444,3 +444,7 @@ body * {
   background-size: cover;
 }
 /*rooms*/
+.swal-title span {
+  display: block;
+  direction: ltr;
+}
