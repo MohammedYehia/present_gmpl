@@ -110,14 +110,14 @@ models.sequelize.sync({ force: true }).then(async () => {
 
   ]);
 
-  await models.Clients.bulkCreate([{
+    await models.Clients.bulkCreate([{
     name: 'ramy',
-    phone: '0599447989',
+    phone: '05999955559',
     email: 'ramy@hotmail.com',
   },
   {
     name: 'ahmed',
-    phone: '0599946544',
+    phone: '05999955554',
     email: 'a.shatat@hotmail.com',
   },
   {
@@ -127,7 +127,7 @@ models.sequelize.sync({ force: true }).then(async () => {
   },
   {
     name: 'abdalsamad',
-    phone: '0599194310',
+    phone: '05999955553',
     email: 'abdalsamad.y.m@gmail.com',
   },
   ]);
