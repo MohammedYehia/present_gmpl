@@ -213,10 +213,14 @@
   padding: 3px;
   background: #F2385A;
   border-radius: 2px;
+  cursor: pointer;
+
 }
 
 .editButton {
-  background-color: #56CCF2
+  background-color: #56CCF2;
+  display: none;
+
 }
 
 .itemFooter {
@@ -482,6 +486,25 @@ header[role="banner"] .utilities li a {
 
 /* header */
 
+swal-form input {
+  width: 70%;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: none;
+  font-size: 14px;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.14);
+  padding: 10px 13px;
+  border-radius: 2px;
+  transition: border-color .2s;
+}
+
+
+
+
 
 
 nav[role="navigation"] {
@@ -489,10 +512,10 @@ nav[role="navigation"] {
   color: #ddd;
   /* icons */
 }
-.mainLink, .mainLink a , .subLink{
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.mainLink{
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
-.mainLink a , .subLink a {
+.mainLink a  {
   color: #ddd;
   text-decoration: none;
   display: block;
@@ -1006,5 +1029,13 @@ body * {
   background-color: rgba(255, 255, 255, 0.05)
 }
 .subActive {
-  background-color: #16A085
+  background-color: #6db8ff2e
+
+}
+
+.mainBody{
+  margin-top: 95px;
+}
+#HomePage{
+  margin-top: 50px
 }
