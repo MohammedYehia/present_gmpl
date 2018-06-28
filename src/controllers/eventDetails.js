@@ -9,9 +9,13 @@ export default (req, res) => {
         errorMessage: 'Page not found',
       });
     }
-    return res.render('eventDetails', {
-      detail: detail.dataValues,
-      js,
-    });
+    models.Bookings.findOne({ where: { event_id: req.params.id } })
+      .then((result) => {
+        detail.event_time = result.dataValues.start_at;
+        return res.render('eventDetails', {
+          detail: detail.dataValues,
+          js,
+        });
+      });
   });
 };
