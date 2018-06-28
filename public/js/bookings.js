@@ -22,6 +22,7 @@ const swalLoad = (error) => {
 };
 
 $('#calendar').fullCalendar({
+  schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
   groupByDate: true,
   firstDay: 6,
   selectable: false,
