@@ -54,6 +54,12 @@ $('#calendar').fullCalendar({
   select: (start, end, jsEvent, view, resource) => {
     const duration = (end - start) / 1000;
     duration === 1800 ? end.add(0.5, 'hours') : end = end;
+    if ((new Date(start)).getHours() < 8) {
+      start = new Date(start);
+      start.setHours(8);
+      end = new Date(end);
+      end.setHours(20);
+    }
     if (resource) {
       verifyStart(start, end, resource, 'bookings', '');
     }
